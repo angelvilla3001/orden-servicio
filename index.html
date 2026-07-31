@@ -1844,6 +1844,7 @@ return '<script src="' + u + '">' + cierre;
 }).join('');
 var doc = '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">'
 + '<meta name="viewport" content="width=device-width,initial-scale=1.0">'
++ '<script>window.MIDAS_LOGIN_OPCIONAL=true;' + cierre
 + '<script src="' + CDN + '">' + cierre
 + libs
 + '<script>' + fuente('auth-src') + cierre
@@ -1866,5 +1867,9 @@ document.getElementById('lg').onclick = function(){ window.MidasAuth.mostrarLogi
 }
 var destino = location.hash.replace('#','');
 if(destino && document.getElementById('tpl-' + destino)) ir(destino);
-})();</script>
+})();
+window.addEventListener('hashchange', function(){
+var d = location.hash.replace('#','') || 'inicio';
+if(d !== actual) ir(d);
+});</script>
 </body></html>
