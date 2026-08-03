@@ -519,7 +519,7 @@ const ZONAS=[
 ['interior','Interior'],['motor','Motor'],['llantas','Llantas / rines'],
 ['tablero','Tablero / kilometraje'],['documentos','Documentos']
 ];
-const MAX_LADO=1600, CALIDAD=.72, MAX_FOTOS=20, MAX_PESO=15*1024*1024;
+const MAX_LADO=1400, CALIDAD=.72, MAX_FOTOS=20, MAX_PESO=15*1024*1024;
 const EXT_OK=['jpg','jpeg','png','webp','heic','heif','gif','bmp','tif','tiff','pdf'];
 let fotos=[]; 
 function pesoLegible(b){
@@ -532,39 +532,60 @@ return archivo.type.startsWith('image/')
 || archivo.type==='application/pdf'
 || EXT_OK.includes(ext);
 }
-function comprimir(archivo){
-return new Promise(resolver=>{
-if(archivo.type==='application/pdf' || extensionDe(archivo.name)==='pdf'){
-resolver({blob:archivo, comprimido:false}); return;
+function lienzoABlob(lienzo){
+return new Promise(r=>lienzo.toBlob(r,'image/jpeg',CALIDAD));
 }
-const lector=new FileReader();
-lector.onload=()=>{
+async function dibujarYComprimir(fuente, an, al, original){
+const lienzo=document.createElement('canvas');
+lienzo.width=an; lienzo.height=al;
+const ctx=lienzo.getContext('2d');
+ctx.fillStyle='#fff'; ctx.fillRect(0,0,an,al);
+ctx.drawImage(fuente,0,0,an,al);
+const b=await lienzoABlob(lienzo);
+lienzo.width=lienzo.height=0;
+return (b && b.size<original.size) ? {blob:b,comprimido:true}
+: {blob:original,comprimido:false};
+}
+async function comprimir(archivo){
+if(archivo.type==='application/pdf' || extensionDe(archivo.name)==='pdf'){
+return {blob:archivo, comprimido:false};
+}
+if(typeof createImageBitmap==='function'){
+let bmp=null;
+try{
+bmp=await createImageBitmap(archivo,{resizeWidth:MAX_LADO,resizeQuality:'medium'});
+if(bmp.height>MAX_LADO){
+const alto=bmp.height; bmp.close(); bmp=null;
+bmp=await createImageBitmap(archivo,{resizeHeight:MAX_LADO,resizeQuality:'medium'});
+}
+const r=await dibujarYComprimir(bmp,bmp.width,bmp.height,archivo);
+bmp.close(); bmp=null;
+return r;
+}catch(e){
+if(bmp){ try{bmp.close();}catch(_){} }
+}
+}
+return new Promise(resolver=>{
+const url=URL.createObjectURL(archivo);
 const img=new Image();
-img.onload=()=>{
-let {width:an,height:al}=img;
-if(!an||!al){ resolver({blob:archivo,comprimido:false}); return; }
+img.onload=async()=>{
+let an=img.naturalWidth, al=img.naturalHeight;
+if(!an||!al){ URL.revokeObjectURL(url); resolver({blob:archivo,comprimido:false}); return; }
 if(an>MAX_LADO||al>MAX_LADO){
 const f=MAX_LADO/Math.max(an,al);
 an=Math.round(an*f); al=Math.round(al*f);
 }
 try{
-const lienzo=document.createElement('canvas');
-lienzo.width=an; lienzo.height=al;
-const ctx=lienzo.getContext('2d');
-ctx.fillStyle='#fff'; ctx.fillRect(0,0,an,al);
-ctx.drawImage(img,0,0,an,al);
-lienzo.toBlob(b=>{
-resolver(b && b.size<archivo.size
-? {blob:b, comprimido:true}
-: {blob:archivo, comprimido:false});
-},'image/jpeg',CALIDAD);
-}catch(e){ resolver({blob:archivo, comprimido:false}); }
+const r=await dibujarYComprimir(img,an,al,archivo);
+resolver(r);
+}catch(e){
+resolver({blob:archivo,comprimido:false});
+}finally{
+URL.revokeObjectURL(url);
+}
 };
-img.onerror=()=>resolver({blob:archivo, comprimido:false});
-img.src=lector.result;
-};
-lector.onerror=()=>resolver({blob:archivo, comprimido:false});
-lector.readAsDataURL(archivo);
+img.onerror=()=>{ URL.revokeObjectURL(url); resolver({blob:archivo,comprimido:false}); };
+img.src=url;
 });
 }
 async function agregarFotos(lista){
@@ -579,7 +600,13 @@ rechazados.push('Se alcanzó el máximo de '+MAX_FOTOS+' archivos');
 break;
 }
 zona.querySelector('p').innerHTML='Procesando archivo…';
-const {blob}=await comprimir(archivo);
+let blob;
+try{
+({blob}=await comprimir(archivo));
+}catch(e){
+rechazados.push((archivo.name||'la foto')+' (el celular se quedó sin memoria; intenta subirla sola)');
+continue;
+}
 const esPdf=archivo.type==='application/pdf'||extensionDe(archivo.name)==='pdf';
 fotos.push({
 id:'f'+Date.now()+Math.random().toString(36).slice(2,7),
