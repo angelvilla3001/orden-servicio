@@ -8,8 +8,271 @@
 <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#2c3e50;height:100vh;display:flex;flex-direction:column;overflow:hidden}#tb{background:#1a1a2e;color:#fff;height:50px;display:flex;align-items:center;gap:14px;padding:0 18px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.3);z-index:50}#tb .lg{font-weight:800;font-size:15px;cursor:pointer;white-space:nowrap}#tb .lg b{color:#f5a623}#tb .sp{flex:1}#mnu{display:none;background:none;border:none;color:#fff;font-size:20px;cursor:pointer;padding:2px 6px}#ly{display:flex;flex:1;overflow:hidden}#sd{width:210px;background:#fff;border-right:1px solid #e1e4e8;flex-shrink:0;overflow-y:auto;padding:10px 0;transition:margin-left .2s}.nv{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;font-size:13px;font-weight:600;color:#718096;border-left:3px solid transparent;transition:.12s}.nv:hover{background:#f7f9fc;color:#2c3e50}.nv.on{background:#fff5f7;color:#e94560;border-left-color:#e94560}.nv .i{font-size:16px;flex-shrink:0}.nv .t{flex:1}.pb{font-size:8.5px;font-weight:800;background:#d4edda;color:#155724;padding:2px 6px;border-radius:10px;text-transform:uppercase;letter-spacing:.3px}#ct{flex:1;overflow:hidden;position:relative;background:#f0f4f8}.pn{display:none;height:100%;width:100%}.pn.on{display:block}.pn iframe{width:100%;height:100%;border:0;display:block}#pn-inicio{overflow:auto}#hm{padding:40px 26px;max-width:960px;margin:0 auto}#hm .hd{text-align:center;margin-bottom:36px}#hm .hd .ic{font-size:50px;display:block;margin-bottom:10px}#hm .hd h2{font-size:26px;font-weight:900;color:#1a1a2e;letter-spacing:.5px}#hm .hd h2 b{color:#f5a623}#hm .hd p{color:#718096;font-size:13px;margin-top:6px}#gr{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:16px}.cd{background:#fff;border:1px solid #e1e4e8;border-radius:12px;padding:22px 20px;cursor:pointer;transition:.16s}.cd:hover{transform:translateY(-3px);border-color:#e94560;box-shadow:0 10px 26px rgba(0,0,0,.1)}.cd .ci{font-size:30px;display:block;margin-bottom:10px}.cd h3{font-size:15px;font-weight:800;margin-bottom:6px;color:#1a1a2e}.cd p{font-size:12px;color:#718096;line-height:1.5}.tg{display:inline-block;margin-top:11px;font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:3px 9px;border-radius:20px;background:#ffe0e6;color:#c72c41}.tg.pub{background:#d4edda;color:#155724}#lg{background:rgba(255,255,255,.12);color:#fff;border:none;border-radius:6px;padding:6px 13px;font-size:11.5px;font-weight:700;cursor:pointer}#lg:hover{background:#e94560}.ld{display:flex;align-items:center;justify-content:center;height:100%;gap:12px;color:#718096;font-size:13px}.sp2{width:22px;height:22px;border:3px solid #e1e4e8;border-top-color:#e94560;border-radius:50%;animation:sp .7s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}@media(max-width:820px){#sd{position:absolute;top:50px;bottom:0;left:0;z-index:40;margin-left:-210px;box-shadow:4px 0 16px rgba(0,0,0,.15)}#sd.open{margin-left:0}#mnu{display:block}#tb .lg{font-size:13px}}</style>
 </head><body>
 <div id="tb"><button id="mnu" onclick="document.getElementById('sd').classList.toggle('open')">&#9776;</button><div class="lg" onclick="ir('inicio')">&#128295; <b>MIDAS</b> AUTOMOTRIZ</div><div class="sp"></div><span id="slot"></span></div>
-<div id="ly"><div id="sd"><div class="nv on" data-m="inicio" onclick="ir('inicio')"><span class="i">&#127968;</span><span class="t">Inicio</span></div><div class="nv" data-m="ordenes" onclick="ir('ordenes')"><span class="i">📋</span><span class="t">Board de Órdenes</span></div><div class="nv" data-m="nueva" onclick="ir('nueva')"><span class="i">📝</span><span class="t">Nueva Orden</span><span class=pb>público</span></div><div class="nv" data-m="evidencias" onclick="ir('evidencias')"><span class="i">📷</span><span class="t">Evidencias</span></div><div class="nv" data-m="inventario" onclick="ir('inventario')"><span class="i">📦</span><span class="t">Inventario</span></div><div class="nv" data-m="equipos" onclick="ir('equipos')"><span class="i">🏗️</span><span class="t">Elevadores y Carrusel</span></div><div class="nv" data-m="datos" onclick="ir('datos')"><span class="i">🗄️</span><span class="t">Base de Datos</span></div></div><div id="ct"><div class="pn on" id="pn-inicio"><div id="hm"><div class="hd"><span class="ic">&#128295;</span><h2><b>MIDAS</b> AUTOMOTRIZ</h2><p>Sistema de gestion digital del taller</p></div><div id="gr"><div class="cd" onclick="ir('ordenes')"><span class="ci">📋</span><h3>Board de Órdenes</h3><p>Seguimiento de órdenes por estado, con comentarios e historial</p><span class="tg ">Requiere cuenta</span></div><div class="cd" onclick="ir('nueva')"><span class="ci">📝</span><h3>Nueva Orden</h3><p>Captura de orden de servicio e inventario de entrada</p><span class="tg pub">Acceso público</span></div><div class="cd" onclick="ir('evidencias')"><span class="ci">📷</span><h3>Evidencias</h3><p>Todas las fotos de daños, buscables por cliente o placas</p><span class="tg ">Requiere cuenta</span></div><div class="cd" onclick="ir('inventario')"><span class="ci">📦</span><h3>Inventario</h3><p>Refacciones, herramientas e insumos con alertas de stock</p><span class="tg ">Requiere cuenta</span></div><div class="cd" onclick="ir('equipos')"><span class="ci">🏗️</span><h3>Elevadores y Carrusel</h3><p>Estado en vivo y cálculo de horas de uso</p><span class="tg ">Requiere cuenta</span></div><div class="cd" onclick="ir('datos')"><span class="ci">🗄️</span><h3>Base de Datos</h3><p>Todas las tablas del sistema y descarga a Excel</p><span class="tg ">Requiere cuenta</span></div></div></div></div></div></div>
-<template id="tpl-ordenes" data-pub="0"><style>:root{--primary:#1a1a2e;--accent:#e94560;--gold:#f5a623;--bg:#f5f6f8;--white:#fff;--border:#e6e9ef;--text:#323338;--gray:#676879;--light:#c5c7d4;--radius:6px}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column;overflow:hidden}.top-bar{background:var(--primary);color:#fff;padding:0 20px;height:48px;display:flex;align-items:center;gap:14px;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.3)}.top-bar .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px}.top-bar .logo b{color:var(--gold)}.top-divider{width:1px;height:24px;background:rgba(255,255,255,.2)}.board-title{font-size:14px;font-weight:600;opacity:.9}.top-bar-right{margin-left:auto;display:flex;align-items:center;gap:8px}.tbtn{padding:6px 13px;border-radius:var(--radius);font-size:12px;font-weight:700;border:none;cursor:pointer;transition:.15s}.tbtn-primary{background:var(--accent);color:#fff}.tbtn-excel{background:#00c875;color:#fff}.tbtn-ghost{background:rgba(255,255,255,.1);color:#fff}.tbtn:hover{filter:brightness(1.12)}.tbtn:disabled{opacity:.5;cursor:wait}.toolbar{background:var(--white);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;align-items:center;gap:10px;flex-shrink:0;flex-wrap:wrap}.search-box{position:relative;flex:1;min-width:180px;max-width:300px}.search-box input{width:100%;padding:6px 10px 6px 32px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:13px;background:#f5f6f8}.search-box input:focus{outline:none;border-color:#0073ea;background:#fff}.search-box .ico{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--gray)}.filter-chips{display:flex;gap:6px;flex-wrap:wrap}.chip{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer;border:2px solid transparent;background:#f5f6f8;color:var(--gray);transition:.12s;white-space:nowrap}.chip:hover{background:#e8ebf3}.chip.active{border-color:currentColor;background:#fff}.toolbar-right{margin-left:auto;display:flex;gap:6px}.view-btn{padding:5px 10px;border:1.5px solid var(--border);border-radius:var(--radius);background:#fff;font-size:12px;cursor:pointer;color:var(--gray)}.view-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}.main{display:flex;flex:1;overflow:hidden}.board-area{flex:1;overflow:auto;padding:16px 20px}.group{margin-bottom:20px}.group-header{display:flex;align-items:center;gap:8px;padding:6px 0;font-weight:700;font-size:13px}.group-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}.group-count{font-size:11px;color:var(--gray);background:#e8ebf3;border-radius:20px;padding:1px 7px;font-weight:700}.tbl-wrap{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:auto;margin-top:6px}table{width:100%;border-collapse:collapse;font-size:12.5px}thead th{background:#f5f6f8;padding:8px 12px;text-align:left;font-weight:700;font-size:10.5px;color:var(--gray);border-bottom:2px solid var(--border);white-space:nowrap;letter-spacing:.3px;text-transform:uppercase;position:sticky;top:0;z-index:5}tbody tr{cursor:pointer;transition:.1s;border-bottom:1px solid #f0f1f5}tbody tr:last-child{border-bottom:none}tbody tr:hover td{background:#e8f5ff}tbody tr.selected td{background:#ddeeff}tbody tr.selected td:first-child{border-left:3px solid #0073ea}tbody td{padding:8px 12px;vertical-align:middle;white-space:nowrap}tbody td:first-child{border-left:3px solid transparent;font-weight:700}.num-cell{font-weight:800;color:var(--primary)}.date-cell{color:var(--gray);font-size:11.5px}.plate-cell{font-family:monospace;background:#f5f6f8;border-radius:4px;padding:2px 6px;font-size:11px;color:var(--primary);font-weight:700}.null-cell{color:#c5c7d4;font-style:italic;font-size:11px}.money-cell{font-weight:700;color:#0073ea}.truncate{max-width:180px;overflow:hidden;text-overflow:ellipsis}.status-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:4px;font-size:11px;font-weight:700;color:#fff;cursor:pointer;white-space:nowrap;transition:.12s;border:none}.status-badge:hover{filter:brightness(1.12)}.side-panel{width:0;background:var(--white);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;transition:width .2s ease;flex-shrink:0}.side-panel.open{width:660px}.panel-header{padding:12px 18px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;flex-shrink:0}.panel-title{font-weight:800;font-size:16px}.panel-close{background:none;border:none;font-size:18px;cursor:pointer;color:var(--gray);padding:4px 8px;border-radius:4px}.panel-close:hover{background:#f5f6f8}.panel-breadcrumb{font-size:11px;color:var(--gray);margin-bottom:3px}.panel-body{display:flex;flex:1;overflow:hidden}.panel-fields{width:270px;flex-shrink:0;overflow-y:auto;padding:10px 0;border-right:1px solid var(--border)}.field-row{display:flex;align-items:flex-start;padding:6px 16px;gap:10px}.field-row:hover{background:#fafbfc}.field-label{font-size:11px;color:var(--gray);font-weight:600;width:95px;flex-shrink:0;padding-top:2px;line-height:1.3}.field-val{flex:1;font-size:12.5px;font-weight:500;line-height:1.4;word-break:break-word}.field-section{padding:12px 16px 4px;font-size:10px;font-weight:800;color:var(--light);text-transform:uppercase;letter-spacing:.5px}.panel-updates{flex:1;display:flex;flex-direction:column;overflow:hidden}.tabs{display:flex;border-bottom:1px solid var(--border);flex-shrink:0}.tab{padding:10px 16px;font-size:12px;font-weight:600;color:var(--gray);cursor:pointer;border-bottom:2px solid transparent}.tab.active{color:#0073ea;border-bottom-color:#0073ea}.tab-pane{display:none;flex:1;flex-direction:column;overflow:hidden}.tab-pane.active{display:flex}.comment-area{padding:12px 14px;border-bottom:1px solid var(--border);flex-shrink:0}.comment-input{width:100%;border:1.5px solid var(--border);border-radius:var(--radius);padding:8px 10px;font-size:12.5px;font-family:inherit;resize:vertical;min-height:58px}.comment-input:focus{outline:none;border-color:#0073ea}.comment-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:6px}.cbtn{padding:5px 14px;border-radius:var(--radius);font-size:12px;font-weight:700;border:none;cursor:pointer}.cbtn-send{background:#0073ea;color:#fff}.cbtn-cancel{background:#f5f6f8;color:var(--gray)}.comment-list{flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:12px}.comment-item{display:flex;gap:10px}.comment-avatar{width:30px;height:30px;border-radius:50%;background:#0073ea;color:#fff;font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.comment-meta{display:flex;align-items:center;gap:8px;margin-bottom:3px}.comment-author{font-weight:700;font-size:12px}.comment-date{font-size:10px;color:var(--gray)}.comment-text{font-size:12.5px;line-height:1.5;white-space:pre-wrap}.no-comments{text-align:center;padding:30px;color:var(--light);font-size:12px;line-height:1.6}.activity-list{flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:9px}.act-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--gray)}.act-dot{width:6px;height:6px;border-radius:50%;background:var(--border);flex-shrink:0;margin-top:5px}.act-text{flex:1;line-height:1.4}.act-date{font-size:10px;white-space:nowrap}.status-popup{position:fixed;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,.14);z-index:500;overflow:hidden;width:180px;display:none}.status-opt{display:flex;align-items:center;gap:8px;padding:8px 14px;font-size:12.5px;font-weight:700;cursor:pointer}.status-opt:hover{background:#f5f6f8}.status-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}.loading{display:flex;align-items:center;justify-content:center;padding:60px;gap:12px;color:var(--gray);font-size:13px}.spinner{width:20px;height:20px;border:3px solid #f0f1f5;border-top-color:#0073ea;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.empty{text-align:center;padding:50px;color:var(--light)}.empty .ico{font-size:36px;margin-bottom:10px}.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}.modal-bg.show{display:flex}.modal{background:#fff;border-radius:12px;padding:24px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;box-shadow:0 12px 48px rgba(0,0,0,.2)}.modal h2{font-size:17px;font-weight:800;margin-bottom:18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-grid.full{grid-template-columns:1fr}.fg{display:flex;flex-direction:column;gap:4px}.fg label{font-size:10.5px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}.fg input,.fg select,.fg textarea{padding:8px 10px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:13px;font-family:inherit}.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:#0073ea}.fg textarea{resize:vertical;min-height:64px}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}.mbtn{padding:8px 20px;border-radius:var(--radius);font-size:13px;font-weight:700;border:none;cursor:pointer}.mbtn-primary{background:#0073ea;color:#fff}.mbtn-ghost{background:#f5f6f8;color:var(--gray)}.ed-input{width:100%;padding:5px 8px;border:1.5px solid var(--border);border-radius:5px;font-size:12.5px;font-family:inherit;background:#fff;color:var(--text)}.ed-input:focus{outline:none;border-color:#0073ea;background:#f7fbff}.ed-input:disabled{background:#f5f6f8;color:var(--gray);cursor:not-allowed;border-color:#eee}textarea.ed-input{resize:vertical;min-height:52px;line-height:1.4}.ed-barra{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--border);padding:10px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.ed-btn{padding:8px 16px;border:none;border-radius:7px;font-size:12.5px;font-weight:700;cursor:pointer}.ed-guardar{background:#0073ea;color:#fff}.ed-guardar:disabled{opacity:.5;cursor:not-allowed}.ed-cerrar{background:#037f4c;color:#fff;margin-left:auto}.ed-cerrar:hover{background:#026b40}.ed-aviso{font-size:11px;color:var(--gray);flex-basis:100%;line-height:1.5}.sello{background:linear-gradient(135deg,#037f4c,#025f39);color:#fff;padding:11px 16px;display:flex;align-items:center;gap:10px;font-size:12px}.sello .ic{font-size:20px}.sello b{display:block;font-size:12.5px;margin-bottom:1px}.sello span{opacity:.85;font-size:11px}.candado{display:inline-flex;align-items:center;gap:3px;font-size:9.5px;font-weight:800;background:#037f4c;color:#fff;padding:2px 7px;border-radius:10px;text-transform:uppercase;letter-spacing:.3px;vertical-align:middle}.conf-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:2500;display:none;align-items:center;justify-content:center;padding:20px}.conf-bg.show{display:flex}.conf{background:#fff;border-radius:14px;padding:26px;max-width:460px;width:100%;box-shadow:0 14px 50px rgba(0,0,0,.25)}.conf .ic{font-size:38px;display:block;text-align:center;margin-bottom:12px}.conf h3{font-size:17px;font-weight:800;text-align:center;margin-bottom:10px}.conf p{font-size:13px;line-height:1.65;color:var(--gray);margin-bottom:14px}.conf .caja{background:#fff8e1;border-left:4px solid #f5a623;padding:11px 14px;border-radius:8px;font-size:12.5px;line-height:1.6;color:#7a5c00;margin-bottom:16px}.conf .datos{background:#f7f9fc;border-radius:8px;padding:11px 14px;font-size:12.5px;line-height:1.7;margin-bottom:16px}.conf .acciones{display:flex;gap:9px;justify-content:flex-end}.conf .acciones button{padding:9px 18px;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer}.conf .no{background:#f5f6f8;color:var(--gray)}.conf .si{background:#037f4c;color:#fff}.ev-lista{flex:1;overflow-y:auto;padding:14px}.ev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:11px}.ev-item{border:1px solid var(--border);border-radius:9px;overflow:hidden;background:#fff}.ev-item img{width:100%;height:105px;object-fit:cover;display:block;cursor:zoom-in;background:#f0f1f5}.ev-doc{height:105px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:#f7f9fc;text-decoration:none;color:var(--gray);transition:.12s}.ev-doc:hover{background:#e7f3ff}.ev-doc .ic{font-size:28px}.ev-doc .nm{font-size:9.5px;padding:0 8px;text-align:center;word-break:break-all;line-height:1.25}.ev-doc .ab{font-size:9px;font-weight:800;color:#0073ea;text-transform:uppercase;letter-spacing:.3px}.ev-item .meta{padding:7px 9px}.ev-item .zn{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;color:#0073ea;display:block;margin-bottom:2px}.ev-item .ds{font-size:11px;color:var(--text);line-height:1.35;word-break:break-word}.ev-item .fc{font-size:9.5px;color:var(--light);margin-top:3px}.ev-vacio{text-align:center;padding:40px 20px;color:var(--light);font-size:12px;line-height:1.7}.ev-vacio .ic{font-size:34px;display:block;margin-bottom:10px}.ev-cab{display:flex;align-items:center;gap:9px;margin-bottom:12px;font-size:12px;color:var(--gray)}.ev-cab b{color:var(--text)}.ev-visor{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:3000;display:none;align-items:center;justify-content:center;padding:26px;flex-direction:column;gap:14px}.ev-visor.abierto{display:flex}.ev-visor img{max-width:100%;max-height:78vh;border-radius:8px}.ev-visor .info{color:#fff;font-size:13px;text-align:center;max-width:560px}.ev-visor .info b{color:#f5a623}.ev-visor .cerrar{position:absolute;top:18px;right:22px;background:rgba(255,255,255,.15);color:#fff;border:none;width:38px;height:38px;border-radius:50%;font-size:19px;cursor:pointer}.ev-visor .bajar{background:#0073ea;color:#fff;border:none;border-radius:7px;padding:8px 20px;font-size:12.5px;font-weight:700;cursor:pointer;text-decoration:none}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:10px 22px;border-radius:8px;font-size:13px;font-weight:600;z-index:2000;opacity:0;transition:.25s;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.25)}.toast.show{opacity:1;bottom:34px}::-webkit-scrollbar{width:7px;height:7px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#c5c7d4;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#a8aab9}</style><div class="top-bar"><div class="logo">🔧 <b>MIDAS</b> Automotriz</div><div class="top-divider"></div><div class="board-title">Proceso de Órdenes de Servicio</div><div class="top-bar-right"><span id="connDot" style="font-size:10px;color:#aaa">● Conectando…</span><button class="tbtn tbtn-ghost" onclick="loadOrders()">🔄 Actualizar</button><button class="tbtn tbtn-excel" onclick="exportExcel()">📊 Excel</button><button class="tbtn tbtn-primary" onclick="openNewModal()">+ Nueva Orden</button></div></div><div class="toolbar"><div class="search-box"><span class="ico">🔍</span><input type="text" id="searchInput" placeholder="Buscar cliente, placa, orden…" oninput="applyFilter()"/></div><div class="filter-chips" id="filterChips"></div><div class="toolbar-right"><button class="view-btn active" onclick="setView('table',this)">☰ Tabla</button><button class="view-btn" onclick="setView('kanban',this)">▦ Kanban</button></div></div><div class="main"><div class="board-area" id="boardArea"><div class="loading"><div class="spinner"></div> Cargando órdenes…</div></div><div class="side-panel" id="sidePanel"><div class="panel-header"><div style="flex:1"><div class="panel-breadcrumb">Midas Automotriz › Órdenes de Servicio</div><div class="panel-title" id="panelTitle">—</div></div><button class="panel-close" onclick="closePanel()">✕</button></div><div class="panel-body"><div class="panel-fields" id="panelFields"></div><div class="panel-updates"><div class="tabs"><div class="tab active" onclick="switchTab('updates',this)">💬 Actualizaciones <span id="cCount"></span></div><div class="tab" onclick="switchTab('fotos',this)">📷 Evidencias <span id="fCount"></span></div><div class="tab" onclick="switchTab('activity',this)">📋 Actividad</div></div><div class="tab-pane active" id="tab-updates"><div class="comment-area"><textarea class="comment-input" id="commentInput" placeholder="Escribe una actualización sobre esta orden…"></textarea><div class="comment-actions"><button class="cbtn cbtn-cancel" onclick="document.getElementById('commentInput').value=''">Cancelar</button><button class="cbtn cbtn-send" id="btnPost" onclick="postComment()">Actualizar</button></div></div><div class="comment-list" id="commentList"></div></div><div class="tab-pane" id="tab-fotos"><div class="ev-lista" id="evLista"></div></div><div class="tab-pane" id="tab-activity"><div class="activity-list" id="activityList"></div></div></div></div></div></div><div class="status-popup" id="statusPopup"></div><div class="toast" id="toast"></div><div class="conf-bg" id="confBg"><div class="conf"><span class="ic">🔒</span><h3>¿Terminar esta orden permanentemente?</h3><div class="datos" id="confDatos"></div><div class="caja"><b>Esto no se puede deshacer.</b><br>
+<div id="ly"><div id="sd"><div class="nv on" data-m="inicio" onclick="ir('inicio')"><span class="i">&#127968;</span><span class="t">Inicio</span></div><div class="nv" data-m="panel" onclick="ir('panel')"><span class="i">🎛️</span><span class="t">Panel de Control</span></div><div class="nv" data-m="midia" onclick="ir('midia')"><span class="i">📅</span><span class="t">Mi Día</span></div><div class="nv" data-m="ordenes" onclick="ir('ordenes')"><span class="i">📋</span><span class="t">Board de Órdenes</span></div><div class="nv" data-m="nueva" onclick="ir('nueva')"><span class="i">📝</span><span class="t">Nueva Orden</span><span class=pb>público</span></div><div class="nv" data-m="analisis" onclick="ir('analisis')"><span class="i">📊</span><span class="t">Análisis</span></div><div class="nv" data-m="evidencias" onclick="ir('evidencias')"><span class="i">📷</span><span class="t">Evidencias</span></div><div class="nv" data-m="inventario" onclick="ir('inventario')"><span class="i">📦</span><span class="t">Inventario</span></div><div class="nv" data-m="equipos" onclick="ir('equipos')"><span class="i">🏗️</span><span class="t">Elevadores y Carrusel</span></div><div class="nv" data-m="datos" onclick="ir('datos')"><span class="i">🗄️</span><span class="t">Base de Datos</span></div></div><div id="ct"><div class="pn on" id="pn-inicio"><div id="hm"><div class="hd"><span class="ic">&#128295;</span><h2><b>MIDAS</b> AUTOMOTRIZ</h2><p>Sistema de gestion digital del taller</p></div><div id="gr"><div class="cd" onclick="ir('panel')"><span class="ci">🎛️</span><h3>Panel de Control</h3><p>Todas las órdenes con hora prometida y alertas de retraso</p><span class="tg ">Requiere cuenta</span></div><div class="cd" onclick="ir('midia')"><span class="ci">📅</span><h3>Mi Día</h3><p>Utilidad y margen del día contra el mes</p><span class="tg ">Requiere cuenta</span></div><div class="cd" onclick="ir('ordenes')"><span class="ci">📋</span><h3>Board de Órdenes</h3><p>Seguimiento de órdenes por estado, con comentarios e historial</p><span class="tg ">Requiere cuenta</span></div><div class="cd" onclick="ir('nueva')"><span class="ci">📝</span><h3>Nueva Orden</h3><p>Captura de orden de servicio e inventario de entrada</p><span class="tg pub">Acceso público</span></div><div class="cd" onclick="ir('analisis')"><span class="ci">📊</span><h3>Análisis</h3><p>Tablero, Pareto, Gantt, AMEF, SIPOC, causa raíz y Pugh</p><span class="tg ">Requiere cuenta</span></div><div class="cd" onclick="ir('evidencias')"><span class="ci">📷</span><h3>Evidencias</h3><p>Todas las fotos de daños, buscables por cliente o placas</p><span class="tg ">Requiere cuenta</span></div><div class="cd" onclick="ir('inventario')"><span class="ci">📦</span><h3>Inventario</h3><p>Refacciones, herramientas e insumos con alertas de stock</p><span class="tg ">Requiere cuenta</span></div><div class="cd" onclick="ir('equipos')"><span class="ci">🏗️</span><h3>Elevadores y Carrusel</h3><p>Estado en vivo y cálculo de horas de uso</p><span class="tg ">Requiere cuenta</span></div><div class="cd" onclick="ir('datos')"><span class="ci">🗄️</span><h3>Base de Datos</h3><p>Todas las tablas del sistema y descarga a Excel</p><span class="tg ">Requiere cuenta</span></div></div></div></div></div></div>
+<template id="tpl-panel" data-pub="0"><style>:root{--primary:#1a1a2e;--accent:#e94560;--bg:#eef1f5;--border:#d8dde5;--text:#2c3e50;--gray:#6b7684;--light:#b8c0cc;--rezagado:#e74c3c;--vencida:#e67e22;--espera:#2980b9;--presup:#8e44ad}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:13px}header{background:var(--primary);color:#fff;padding:11px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}header h1{font-size:15px;font-weight:800;flex:1;min-width:170px}.hb{background:rgba(255,255,255,.12);color:#fff;border:none;border-radius:6px;padding:6px 12px;font-size:11.5px;font-weight:700;cursor:pointer}.hb:hover{background:var(--accent)}.buscador{background:#fff;border-bottom:1px solid var(--border);padding:13px 18px}.fila{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start}.grupo{border:1px solid var(--border);border-radius:8px;padding:10px 13px;background:#fafbfc}.grupo h4{font-size:9.5px;font-weight:800;color:var(--gray);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}.campo{display:flex;align-items:center;gap:7px;margin-bottom:7px}.campo:last-child{margin-bottom:0}.campo label{font-size:12px;font-weight:600;width:64px;color:var(--text)}.campo label::after{content:' ▸';color:var(--accent);font-weight:800}.campo input{padding:5px 9px;border:1.5px solid var(--border);border-radius:5px;font-size:12.5px;font-family:inherit;width:210px}.campo input:focus{outline:none;border-color:var(--accent)}.radios{display:flex;flex-direction:column;gap:4px}.radios.h{flex-direction:row;gap:13px;flex-wrap:wrap}.radios label{display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;white-space:nowrap}.radios input{accent-color:var(--accent);cursor:pointer}.bbuscar{background:var(--accent);color:#fff;border:none;border-radius:7px;padding:9px 26px;font-size:13px;font-weight:800;cursor:pointer;align-self:center}.bbuscar:hover{filter:brightness(1.1)}.leyenda{display:flex;flex-direction:column;gap:0;border-radius:7px;overflow:hidden;min-width:230px}.leyenda div{padding:6px 12px;font-size:11.5px;font-weight:700;color:#fff;display:flex;align-items:center;gap:7px;cursor:pointer;transition:.12s}.leyenda div:hover{filter:brightness(1.12)}.leyenda div.off{opacity:.42}.leyenda .n{margin-left:auto;background:rgba(255,255,255,.28);border-radius:10px;padding:0 8px;font-size:10.5px;min-width:20px;text-align:center}.contadores{display:flex;gap:7px;padding:11px 18px;overflow-x:auto;background:#fff;border-bottom:1px solid var(--border)}.cont{border:1.5px solid var(--border);border-radius:8px;padding:7px 13px;cursor:pointer;min-width:96px;text-align:center;transition:.12s;background:#fff;flex-shrink:0}.cont:hover{border-color:var(--accent)}.cont.on{border-width:2px}.cont .t{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px}.cont .n{font-size:20px;font-weight:900;line-height:1.15}.tabla-cont{background:#fff;margin:13px 18px;border:1px solid var(--border);border-radius:9px;overflow:hidden}.tabla-cab{background:#4a90d9;color:#fff;padding:7px 13px;font-size:12.5px;font-weight:800}.scroll{overflow:auto;max-height:calc(100vh - 340px)}table{width:100%;border-collapse:collapse;font-size:12px}thead th{background:#dce4ee;padding:6px 9px;text-align:left;font-size:11px;font-weight:700;color:#33415c;border-right:1px solid #c9d3e0;border-bottom:2px solid #b5c2d4;white-space:nowrap;position:sticky;top:0;z-index:5}tbody td{padding:5px 9px;border-right:1px solid #eef1f5;border-bottom:1px solid #eef1f5;white-space:nowrap}tbody tr{cursor:pointer}tbody tr:nth-child(even){background:#f7f9fc}tbody tr:hover td{background:#e3f0ff!important}.orden-n{font-weight:800;color:#1a4e8a}.st{display:inline-block;padding:2px 9px;border-radius:3px;font-size:10.5px;font-weight:800;color:#fff;text-transform:uppercase;letter-spacing:.2px}.num{text-align:right;font-variant-numeric:tabular-nums}.placa{font-family:monospace;font-size:11px;font-weight:700}.mk{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:2px}.nulo{color:var(--light)}.vacio{text-align:center;padding:45px 20px;color:var(--light)}.vacio .ic{font-size:36px;display:block;margin-bottom:10px}.cargando{display:flex;align-items:center;justify-content:center;padding:45px;gap:11px;color:var(--gray)}.spin{width:19px;height:19px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:g .7s linear infinite}@keyframes g{to{transform:rotate(360deg)}}.pie{padding:7px 13px;background:#fafbfc;border-top:1px solid var(--border);font-size:11.5px;color:var(--gray);display:flex;gap:15px;flex-wrap:wrap}.pie b{color:var(--text)}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:9px 19px;border-radius:8px;font-size:12.5px;font-weight:600;z-index:900;opacity:0;transition:.25s;pointer-events:none}.toast.show{opacity:1;bottom:30px}</style><header><span style="font-size:17px">🎛️</span><h1>Panel de Control — Órdenes de Servicio</h1><span id="reloj" style="font-size:11px;opacity:.75"></span><button class="hb" onclick="cargar()">🔄 Actualizar</button></header><div class="buscador"><div class="fila"><div class="grupo" style="flex:1;min-width:290px"><h4>Buscar</h4><div class="campo"><label>No Orden</label><input id="qOrden" placeholder="Número de orden" oninput="pintar()"/></div><div class="campo"><label>Cliente</label><input id="qCliente" placeholder="Nombre, placas, marca…" oninput="pintar()"/></div><div class="radios h" style="margin-top:9px"><label><input type="radio" name="top" value="5" onchange="setTop(5)"/> Top 5</label><label><input type="radio" name="top" value="10" onchange="setTop(10)"/> Top 10</label><label><input type="radio" name="top" value="15" onchange="setTop(15)"/> Top 15</label><label><input type="radio" name="top" value="0" checked onchange="setTop(0)"/> Todas</label></div></div><div class="grupo"><h4>Status</h4><div class="radios" id="radiosEstado"></div></div><div class="grupo" style="padding:10px"><h4>Otros</h4><div class="leyenda" id="leyenda"></div></div><button class="bbuscar" onclick="pintar()">BUSCAR</button></div></div><div class="contadores" id="contadores"></div><div class="tabla-cont"><div class="tabla-cab">Órdenes de Servicio</div><div class="scroll" id="tabla"><div class="cargando"><div class="spin"></div> Cargando órdenes…</div></div><div class="pie" id="pie"></div></div><div class="toast" id="toast"></div><script>const sbP = window.sb;
+let ordenes = [], estados = [], filtroEstado = '', top = 0;
+const alertasOn = {rezagado:false, vencida:false, espera:false, presupuesto:false};
+const ALERTAS = [
+['rezagado', 'Rezagado Más de 1 Día', '#e74c3c', 'alerta_rezagado'],
+['vencida', 'Hora Prometida Vencida', '#e67e22', 'alerta_vencida'],
+['espera', 'Clientes Esperando', '#2980b9', 'alerta_espera'],
+['presupuesto','Tiempo de Presupuesto Excedido','#8e44ad','alerta_presupuesto'],
+];
+(async () => {
+const haySesion = await window.MidasAuth.listo;
+if(!haySesion) return;
+window.MidasAuth.montarBarra('header');
+reloj(); setInterval(reloj, 30000);
+await cargar();
+setInterval(cargar, 60000); 
+})();
+function reloj(){
+document.getElementById('reloj').textContent =
+new Date().toLocaleString('es-MX',{weekday:'short',day:'2-digit',month:'short',
+hour:'2-digit',minute:'2-digit'});
+}
+async function cargar(){
+try{
+const [rOrd, rEst] = await Promise.all([
+sbP.from('panel_ordenes').select('*').order('numero_orden'),
+sbP.from('estados_orden').select('*').eq('activo',true).order('orden')
+]);
+if(rOrd.error) throw rOrd.error;
+ordenes = rOrd.data || [];
+estados = rEst.data || [];
+montarFiltros();
+pintar();
+}catch(e){
+document.getElementById('tabla').innerHTML =
+`<div class="vacio"><span class="ic">⚠️</span>${esc(e.message)}</div>`;
+}
+}
+function montarFiltros(){
+document.getElementById('radiosEstado').innerHTML =
+`<label><input type="radio" name="est" value="" checked onchange="setEstado('')"/> Todos</label>` +
+estados.filter(e=>!e.final).map(e=>
+`<label><input type="radio" name="est" value="${e.clave}" onchange="setEstado('${e.clave}')"/><span style="color:${e.color};font-weight:700">${esc(e.etiqueta)}</span></label>`).join('');
+document.getElementById('leyenda').innerHTML = ALERTAS.map(([k,t,c,campo])=>{
+const n = ordenes.filter(o=>o[campo]).length;
+return `<div style="background:${c}" class="${alertasOn[k]?'':'off'}"
+onclick="toggleAlerta('${k}')" title="Clic para filtrar">
+● ${t}<span class="n">${n}</span></div>`;
+}).join('');
+document.getElementById('contadores').innerHTML = estados.map(e=>{
+const n = ordenes.filter(o=>o.estado===e.clave && !o.cerrada).length;
+return `<div class="cont ${filtroEstado===e.clave?'on':''}"
+style="border-color:${filtroEstado===e.clave?e.color:''}"
+onclick="setEstado('${filtroEstado===e.clave?'':e.clave}')"><div class="t" style="color:${e.color}">${esc(e.etiqueta)}</div><div class="n" style="color:${e.color}">${n}</div></div>`;
+}).join('');
+}
+function setEstado(v){
+filtroEstado = v;
+const r = document.querySelector(`input[name="est"][value="${v}"]`);
+if(r) r.checked = true;
+montarFiltros(); pintar();
+}
+function setTop(n){ top = n; pintar(); }
+function toggleAlerta(k){ alertasOn[k] = !alertasOn[k]; montarFiltros(); pintar(); }
+function filtrar(){
+const qo = document.getElementById('qOrden').value.trim().toLowerCase();
+const qc = document.getElementById('qCliente').value.trim().toLowerCase();
+const hayAlerta = Object.values(alertasOn).some(v=>v);
+let r = ordenes.filter(o=>{
+if(filtroEstado && o.estado !== filtroEstado) return false;
+if(qo && !String(o.numero_orden).includes(qo)) return false;
+if(qc){
+const txt = [o.cliente,o.placas,o.marca,o.modelo,o.tecnico_asignado]
+.filter(Boolean).join(' ').toLowerCase();
+if(!txt.includes(qc)) return false;
+}
+if(hayAlerta){
+const coincide = ALERTAS.some(([k,,,campo]) => alertasOn[k] && o[campo]);
+if(!coincide) return false;
+}
+return true;
+});
+r.sort((a,b)=>{
+const p = o => (o.alerta_rezagado?8:0)+(o.alerta_vencida?4:0)
++ (o.alerta_espera?2:0)+(o.alerta_presupuesto?1:0);
+return p(b)-p(a) || (b.dias||0)-(a.dias||0);
+});
+return top ? r.slice(0, top) : r;
+}
+function pintar(){
+const filas = filtrar();
+const cont = document.getElementById('tabla');
+if(!filas.length){
+cont.innerHTML = '<div class="vacio"><span class="ic">📋</span>Sin órdenes con estos filtros</div>';
+document.getElementById('pie').innerHTML='';
+return;
+}
+cont.innerHTML = `<table><thead><tr><th>Orden</th><th>Status</th><th>Hora Prometida</th><th>Nombre del Cliente</th><th>Marca</th><th>Modelo</th><th>Año</th><th>Placas</th><th>Color</th><th class="num">Días</th><th class="num">Monto</th><th>Técnico</th></tr></thead><tbody>${filas.map(o=>{
+// color de fondo según la alerta más grave
+let fondo='';
+if(o.alerta_rezagado) fondo='background:#fdeaea';
+else if(o.alerta_vencida) fondo='background:#fdf1e3';
+else if(o.alerta_espera) fondo='background:#e8f1fa';
+else if(o.alerta_presupuesto) fondo='background:#f3eaf8';
+const marcas = ALERTAS.filter(([k,,,campo])=>o[campo])
+.map(([,t,c])=>`<span class="mk" style="background:${c}" title="${t}"></span>`).join('');
+return `<tr style="${fondo}" onclick="verOrden('${o.id}')"><td class="orden-n">${marcas}${o.cerrada?'🔒 ':''}${esc(o.numero_orden)}</td><td><span class="st" style="background:${o.estado_color||'#888'}">${esc(o.estado_txt||o.estado)}</span></td><td class="${o.alerta_vencida?'':''}" style="${o.alerta_vencida?'color:#c0392b;font-weight:700':''}">
+${o.promesa_entrega?fechaHora(o.promesa_entrega):'<span class="nulo">—</span>'}</td><td>${esc(o.cliente||'')}</td><td>${esc(o.marca||'')}</td><td>${esc(o.modelo||'')}</td><td>${o.anio||'<span class="nulo">—</span>'}</td><td class="placa">${o.placas?esc(o.placas):'<span class="nulo">—</span>'}</td><td>${esc(o.color_auto||'')}</td><td class="num" style="${o.dias>7?'color:#c0392b;font-weight:700':''}">${o.dias??''}</td><td class="num">${o.monto>0?pesos(o.monto):'<span class="nulo">—</span>'}</td><td>${o.tecnico_asignado?esc(o.tecnico_asignado):'<span class="nulo">Sin asignar</span>'}</td></tr>`;
+}).join('')}</tbody></table>`;
+const suma = filas.reduce((s,o)=>s+Number(o.monto||0),0);
+document.getElementById('pie').innerHTML =
+`<span>Mostrando <b>${filas.length}</b> de <b>${ordenes.length}</b> órdenes</span><span>Monto total: <b>${pesos(suma)}</b></span><span>Días promedio: <b>${(filas.reduce((s,o)=>s+(o.dias||0),0)/filas.length).toFixed(1)}</b></span><span style="margin-left:auto">Se actualiza solo cada minuto</span>`;
+}
+function verOrden(id){
+const o = ordenes.find(x=>x.id===id);
+if(!o) return;
+if(window.parent && window.parent !== window && window.parent.ir){
+window.parent.location.hash = 'ordenes';
+window.parent.ir('ordenes');
+toast('Abriendo orden #'+o.numero_orden+' en el Board…');
+} else {
+toast('Orden #'+o.numero_orden+' — ábrela desde el Board');
+}
+}
+function esc(s){ return s==null?'':String(s)
+.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function pesos(n){ return '$'+Number(n||0).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function fechaHora(d){
+const t=new Date(d); if(isNaN(t)) return '';
+return t.toLocaleDateString('es-MX',{day:'2-digit',month:'2-digit',year:'numeric'})+' '+
+t.toLocaleTimeString('es-MX',{hour:'2-digit',minute:'2-digit'});
+}
+function toast(m){
+const t=document.getElementById('toast');
+t.textContent=m; t.classList.add('show');
+setTimeout(()=>t.classList.remove('show'),2400);
+}</script></template><template id="tpl-midia" data-pub="0"><style>:root{--primary:#1a1a2e;--accent:#e94560;--bg:#eef1f5;--border:#d8dde5;--text:#2c3e50;--gray:#6b7684;--light:#b8c0cc;--verde:#00a86b;--rojo:#e2445c;--azul:#2c5f9e;--dorado:#f5a623}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:13px}header{background:var(--primary);color:#fff;padding:11px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}header h1{font-size:15px;font-weight:800;flex:1;min-width:150px}.hb{background:rgba(255,255,255,.12);color:#fff;border:none;border-radius:6px;padding:6px 12px;font-size:11.5px;font-weight:700;cursor:pointer}.hb:hover{background:var(--accent)}header input[type=date]{padding:5px 9px;border:none;border-radius:6px;font-size:12px;font-family:inherit}header .umb{display:flex;align-items:center;gap:6px;font-size:11.5px;background:rgba(255,255,255,.1);padding:4px 10px;border-radius:6px}header .umb input{width:52px;padding:3px 6px;border:none;border-radius:4px;font-size:12px;text-align:center}.wrap{padding:14px 18px 40px;max-width:1400px;margin:0 auto}.doble{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:1050px){.doble{grid-template-columns:1fr}}.panel{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden}.panel-cab{background:var(--primary);color:#fff;padding:9px 14px;font-size:13px;font-weight:800;display:flex;align-items:center;gap:9px}.panel-cab .sub{font-weight:500;opacity:.7;font-size:11px;margin-left:auto}.panel-cuerpo{padding:14px}.enc{display:grid;grid-template-columns:150px 1fr 1fr;gap:8px;align-items:center;margin-bottom:6px;font-size:10px;font-weight:800;color:var(--gray);text-transform:uppercase;letter-spacing:.4px;text-align:center}.enc .lbl{text-align:left}.enc1{grid-template-columns:150px 1fr}.reng{display:grid;grid-template-columns:150px 1fr 1fr;gap:8px;align-items:center;margin-bottom:6px}.reng1{grid-template-columns:150px 1fr}.reng .lbl{font-size:12px;font-weight:600}.caja{background:#1e3a5f;color:#ffe45c;padding:6px 11px;border-radius:4px;text-align:right;font-weight:800;font-size:13px;font-variant-numeric:tabular-nums}.caja.gris{background:#eef1f5;color:var(--text)}.caja.chica{font-size:12px;padding:5px 9px}.sep{border-top:1px solid var(--border);margin:13px 0}.tit{font-size:10.5px;font-weight:800;color:var(--gray);text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px}table{width:100%;border-collapse:collapse;font-size:12px}th{background:#eef1f5;padding:5px 8px;font-size:10px;font-weight:800;color:var(--gray);text-transform:uppercase;letter-spacing:.3px;text-align:right;border-bottom:1.5px solid var(--border)}th:first-child{text-align:left}td{padding:5px 8px;text-align:right;border-bottom:1px solid #f2f4f7;font-variant-numeric:tabular-nums}td:first-child{text-align:left;font-weight:700}tr.total td{background:#f7f9fc;font-weight:800;border-top:2px solid var(--border)}.pos{color:var(--verde);font-weight:700}.neg{color:var(--rojo);font-weight:700}.estados{display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:6px}.est{border:1.5px solid var(--border);border-radius:7px;padding:6px 9px;text-align:center}.est .t{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.2px;line-height:1.25}.est .n{font-size:19px;font-weight:900;line-height:1.15}.ratio{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600}.ratio .caja{min-width:62px}.grafica{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;margin-top:14px}.grafica h3{font-size:13px;font-weight:800;margin-bottom:3px}.grafica .cap{font-size:11.5px;color:var(--gray);margin-bottom:12px}.chart-box{position:relative;height:280px}.nota{background:#fff8e1;border-left:4px solid var(--dorado);padding:11px 14px;border-radius:7px;font-size:12px;line-height:1.65;color:#7a5c00;margin-top:14px}.cargando{display:flex;align-items:center;justify-content:center;padding:45px;gap:11px;color:var(--gray)}.spin{width:19px;height:19px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:g .7s linear infinite}@keyframes g{to{transform:rotate(360deg)}}</style><header><span style="font-size:17px">📅</span><h1>Mi Día</h1><input type="date" id="fecha"/><div class="umb">Alto margen desde
+ <input type="number" id="umbral" value="70" min="0" max="100"/> %</div><button class="hb" onclick="cargar()">🔄 Actualizar</button></header><div class="wrap"><div id="contenido"><div class="cargando"><div class="spin"></div> Calculando…</div></div></div><script>const sbMD = window.sb;
+const ESTADOS_MD = [
+['inspeccion_1','Inspección 1','#8e44ad'],
+['inspeccion_2','Inspección 2','#a25ddc'],
+['presupuesto', 'Presupuesto', '#0086c0'],
+['refacciones', 'Refacciones', '#fdab3d'],
+['en_proceso', 'En Proceso', '#e67e22'],
+['prefacturado','Prefacturado','#00c875'],
+['facturado', 'Facturado', '#037f4c'],
+];
+let grafica = null;
+(async () => {
+const haySesion = await window.MidasAuth.listo;
+if(!haySesion) return;
+window.MidasAuth.montarBarra('header');
+document.getElementById('fecha').value = hoyLocal();
+document.getElementById('fecha').onchange = cargar;
+document.getElementById('umbral').onchange = cargar;
+await cargar();
+setInterval(cargar, 120000); 
+})();
+function hoyLocal(){
+const d = new Date();
+return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+async function cargar(){
+const f = document.getElementById('fecha').value || hoyLocal();
+const u = Number(document.getElementById('umbral').value) || 70;
+const inicioMes = f.slice(0,8)+'01';
+try{
+const [rDia, rMes] = await Promise.all([
+sbMD.rpc('mi_dia',{p_desde:f, p_hasta:f, p_umbral:u}),
+sbMD.rpc('mi_dia',{p_desde:inicioMes, p_hasta:f, p_umbral:u})
+]);
+if(rDia.error) throw rDia.error;
+if(rMes.error) throw rMes.error;
+pintar(rDia.data, rMes.data, f, u);
+}catch(e){
+document.getElementById('contenido').innerHTML =
+`<div class="panel"><div class="panel-cuerpo" style="color:var(--rojo)">
+No se pudo calcular: ${esc(e.message)}</div></div>`;
+}
+}
+function pintar(dia, mes, fecha, umbral){
+const nomMes = new Date(fecha+'T12:00:00')
+.toLocaleDateString('es-MX',{month:'long',year:'numeric'});
+const nomDia = new Date(fecha+'T12:00:00')
+.toLocaleDateString('es-MX',{weekday:'long',day:'numeric',month:'long'});
+document.getElementById('contenido').innerHTML = `
+<div class="doble">
+${panelDia(dia, nomDia, umbral)}
+${panelMes(mes, nomMes, umbral)}
+</div><div class="grafica"><h3>Ventas contra costo</h3><div class="cap">Comparación del día contra el acumulado del mes, separando refacciones de mano de obra.</div><div class="chart-box"><canvas id="cUtil"></canvas></div></div>
+${dia.facturado.autos===0 ? `<div class="nota"><b>Hoy no hay órdenes facturadas todavía.</b> Los cuadros de "Facturado" se llenan
+conforme mueves órdenes al estado <b>Facturado</b> en el Board.
+Mientras tanto, la columna <b>Estimado</b> te muestra lo que hay en piso sin cobrar.
+</div>` : ''}
+${(dia.facturado.costo_total===0 && dia.facturado.ventas>0) ? `<div class="nota"><b>Falta capturar costos.</b> Hay ventas registradas pero el costo está en cero, así que la
+utilidad aparece igual a la venta. Captura el costo de refacciones y de mano de obra
+en cada orden desde el Board para que el margen sea real.
+</div>` : ''}
+`;
+dibujarGrafica(dia, mes);
+}
+function panelDia(d, titulo, umbral){
+const f = d.facturado, e = d.estimado;
+const am = d.alto_margen;
+return `<div class="panel"><div class="panel-cab">📅 MI DÍA <span class="sub">${titulo}</span></div><div class="panel-cuerpo"><div class="enc"><span class="lbl"></span><span>Facturado</span><span>Estimado de ventas</span></div><div class="reng"><span class="lbl">Número de autos</span>
+${caja(f.autos,'n')}${caja(e.autos,'n')}</div><div class="reng"><span class="lbl">Ventas</span>
+${caja(f.ventas,'$')}${caja(e.ventas,'$')}</div><div class="reng"><span class="lbl">Ticket promedio</span>
+${caja(f.ticket,'$')}${caja(e.ticket,'$')}</div><div class="sep"></div><div class="tit">Servicios de alto margen (arriba de ${umbral}%)</div><table><thead><tr><th>Servicios</th><th>Ventas</th><th>Costo</th><th>Utilidad</th><th>%</th></tr></thead><tbody><tr><td>${num(am.servicios)}</td><td>${pesos(am.ventas)}</td><td>${pesos(am.costo)}</td><td class="pos">${pesos(am.utilidad)}</td><td class="pos">${pct(am.utilidad, am.ventas)}</td></tr></tbody></table><div class="sep"></div><div class="ratio">Servicios / Autos
+${caja(f.servicios,'n')} / ${caja(f.autos,'n')} =
+<span class="caja">${f.autos>0?(f.servicios/f.autos).toFixed(1):'0.0'}</span></div><div class="sep"></div><div class="tit">Órdenes en piso por estado</div><div class="estados">
+${ESTADOS_MD.map(([k,t,c])=>`<div class="est" style="border-color:${c}"><div class="t" style="color:${c}">${t}</div><div class="n" style="color:${c}">${(d.estados&&d.estados[k])||0}</div></div>`).join('')}
+</div><div class="sep"></div>
+${tablaUtilidad(f)}
+</div></div>`;
+}
+function panelMes(m, titulo, umbral){
+const f = m.facturado, am = m.alto_margen;
+return `<div class="panel"><div class="panel-cab" style="background:#2c5f9e">📆 MES <span class="sub">${titulo}</span></div><div class="panel-cuerpo"><div class="enc enc1"><span class="lbl"></span><span>Facturado</span></div><div class="reng reng1"><span class="lbl">Número de autos</span>${caja(f.autos,'n')}</div><div class="reng reng1"><span class="lbl">Ventas</span>${caja(f.ventas,'$')}</div><div class="reng reng1"><span class="lbl">Ticket promedio</span>${caja(f.ticket,'$')}</div><div class="sep"></div><div class="tit">Servicios de alto margen (arriba de ${umbral}%)</div><table><thead><tr><th>Servicios</th><th>Ventas</th><th>Costo</th><th>Utilidad</th><th>%</th></tr></thead><tbody><tr><td>${num(am.servicios)}</td><td>${pesos(am.ventas)}</td><td>${pesos(am.costo)}</td><td class="pos">${pesos(am.utilidad)}</td><td class="pos">${pct(am.utilidad, am.ventas)}</td></tr></tbody></table><div class="sep"></div><div class="ratio">Servicios / Autos
+${caja(f.servicios,'n')} / ${caja(f.autos,'n')} =
+<span class="caja">${f.autos>0?(f.servicios/f.autos).toFixed(1):'0.0'}</span></div><div class="sep"></div>
+${tablaUtilidad(f)}
+</div></div>`;
+}
+function tablaUtilidad(f){
+const fila = (nom, v, c, u) => `<tr><td>${nom}</td><td>${pesos(v)}</td><td>${pesos(c)}</td><td class="${u<0?'neg':'pos'}">${pesos(u)}</td><td class="${u<0?'neg':'pos'}">${pct(u,v)}</td></tr>`;
+const costoGlobal = f.venta_partes>0
+? (100*f.costo_partes/f.venta_partes).toFixed(2)+'%' : '0.00%';
+return `<table><thead><tr><th></th><th>Ventas</th><th>Costo</th><th>Utilidad</th><th>%Utilidad</th></tr></thead><tbody>
+${fila('Partes', f.venta_partes, f.costo_partes, f.util_partes)}
+${fila('Mano de obra', f.venta_mo, f.costo_mo, f.util_mo)}
+<tr class="total"><td>Total</td><td>${pesos(f.ventas)}</td><td>${pesos(f.costo_total)}</td><td class="${f.util_total<0?'neg':'pos'}">${pesos(f.util_total)}</td><td class="${f.util_total<0?'neg':'pos'}">${pct(f.util_total,f.ventas)}</td></tr></tbody></table><div class="reng reng1" style="margin-top:9px"><span class="lbl">Costo partes global</span><span class="caja gris chica">${costoGlobal}</span></div>`;
+}
+function dibujarGrafica(d, m){
+const el = document.getElementById('cUtil');
+if(!el) return;
+if(grafica) grafica.destroy();
+grafica = new Chart(el, {
+type:'bar',
+data:{
+labels:['Partes — venta','Partes — costo','Mano obra — venta','Mano obra — costo'],
+datasets:[
+{label:'Hoy', backgroundColor:'#e94560',
+data:[d.facturado.venta_partes,d.facturado.costo_partes,
+d.facturado.venta_mo,d.facturado.costo_mo]},
+{label:'Mes', backgroundColor:'#2c5f9e',
+data:[m.facturado.venta_partes,m.facturado.costo_partes,
+m.facturado.venta_mo,m.facturado.costo_mo]}
+]
+},
+options:{responsive:true,maintainAspectRatio:false,
+scales:{y:{beginAtZero:true,ticks:{callback:v=>'$'+Number(v).toLocaleString('es-MX')}}}}
+});
+}
+function caja(v, tipo){
+return `<span class="caja">${tipo==='$'?pesos(v):num(v)}</span>`;
+}
+function pesos(n){ return '$'+Number(n||0).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function num(n){ return Number(n||0).toLocaleString('es-MX'); }
+function pct(parte, total){
+if(!total || Number(total)===0) return '0.00%';
+return (100*Number(parte)/Number(total)).toFixed(2)+'%';
+}
+function esc(s){ return s==null?'':String(s)
+.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }</script></template><template id="tpl-ordenes" data-pub="0"><style>:root{--primary:#1a1a2e;--accent:#e94560;--gold:#f5a623;--bg:#f5f6f8;--white:#fff;--border:#e6e9ef;--text:#323338;--gray:#676879;--light:#c5c7d4;--radius:6px}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);height:100vh;display:flex;flex-direction:column;overflow:hidden}.top-bar{background:var(--primary);color:#fff;padding:0 20px;height:48px;display:flex;align-items:center;gap:14px;flex-shrink:0;box-shadow:0 2px 6px rgba(0,0,0,.3)}.top-bar .logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:15px}.top-bar .logo b{color:var(--gold)}.top-divider{width:1px;height:24px;background:rgba(255,255,255,.2)}.board-title{font-size:14px;font-weight:600;opacity:.9}.top-bar-right{margin-left:auto;display:flex;align-items:center;gap:8px}.tbtn{padding:6px 13px;border-radius:var(--radius);font-size:12px;font-weight:700;border:none;cursor:pointer;transition:.15s}.tbtn-primary{background:var(--accent);color:#fff}.tbtn-excel{background:#00c875;color:#fff}.tbtn-ghost{background:rgba(255,255,255,.1);color:#fff}.tbtn:hover{filter:brightness(1.12)}.tbtn:disabled{opacity:.5;cursor:wait}.toolbar{background:var(--white);border-bottom:1px solid var(--border);padding:8px 20px;display:flex;align-items:center;gap:10px;flex-shrink:0;flex-wrap:wrap}.search-box{position:relative;flex:1;min-width:180px;max-width:300px}.search-box input{width:100%;padding:6px 10px 6px 32px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:13px;background:#f5f6f8}.search-box input:focus{outline:none;border-color:#0073ea;background:#fff}.search-box .ico{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-size:12px;color:var(--gray)}.filter-chips{display:flex;gap:6px;flex-wrap:wrap}.chip{padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer;border:2px solid transparent;background:#f5f6f8;color:var(--gray);transition:.12s;white-space:nowrap}.chip:hover{background:#e8ebf3}.chip.active{border-color:currentColor;background:#fff}.toolbar-right{margin-left:auto;display:flex;gap:6px}.view-btn{padding:5px 10px;border:1.5px solid var(--border);border-radius:var(--radius);background:#fff;font-size:12px;cursor:pointer;color:var(--gray)}.view-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}.main{display:flex;flex:1;overflow:hidden}.board-area{flex:1;overflow:auto;padding:16px 20px}.group{margin-bottom:20px}.group-header{display:flex;align-items:center;gap:8px;padding:6px 0;font-weight:700;font-size:13px}.group-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}.group-count{font-size:11px;color:var(--gray);background:#e8ebf3;border-radius:20px;padding:1px 7px;font-weight:700}.tbl-wrap{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:auto;margin-top:6px}table{width:100%;border-collapse:collapse;font-size:12.5px}thead th{background:#f5f6f8;padding:8px 12px;text-align:left;font-weight:700;font-size:10.5px;color:var(--gray);border-bottom:2px solid var(--border);white-space:nowrap;letter-spacing:.3px;text-transform:uppercase;position:sticky;top:0;z-index:5}tbody tr{cursor:pointer;transition:.1s;border-bottom:1px solid #f0f1f5}tbody tr:last-child{border-bottom:none}tbody tr:hover td{background:#e8f5ff}tbody tr.selected td{background:#ddeeff}tbody tr.selected td:first-child{border-left:3px solid #0073ea}tbody td{padding:8px 12px;vertical-align:middle;white-space:nowrap}tbody td:first-child{border-left:3px solid transparent;font-weight:700}.num-cell{font-weight:800;color:var(--primary)}.date-cell{color:var(--gray);font-size:11.5px}.plate-cell{font-family:monospace;background:#f5f6f8;border-radius:4px;padding:2px 6px;font-size:11px;color:var(--primary);font-weight:700}.null-cell{color:#c5c7d4;font-style:italic;font-size:11px}.money-cell{font-weight:700;color:#0073ea}.truncate{max-width:180px;overflow:hidden;text-overflow:ellipsis}.status-badge{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:4px;font-size:11px;font-weight:700;color:#fff;cursor:pointer;white-space:nowrap;transition:.12s;border:none}.status-badge:hover{filter:brightness(1.12)}.side-panel{width:0;background:var(--white);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;transition:width .2s ease;flex-shrink:0}.side-panel.open{width:660px}.panel-header{padding:12px 18px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;flex-shrink:0}.panel-title{font-weight:800;font-size:16px}.panel-close{background:none;border:none;font-size:18px;cursor:pointer;color:var(--gray);padding:4px 8px;border-radius:4px}.panel-close:hover{background:#f5f6f8}.panel-breadcrumb{font-size:11px;color:var(--gray);margin-bottom:3px}.panel-body{display:flex;flex:1;overflow:hidden}.panel-fields{width:270px;flex-shrink:0;overflow-y:auto;padding:10px 0;border-right:1px solid var(--border)}.field-row{display:flex;align-items:flex-start;padding:6px 16px;gap:10px}.field-row:hover{background:#fafbfc}.field-label{font-size:11px;color:var(--gray);font-weight:600;width:95px;flex-shrink:0;padding-top:2px;line-height:1.3}.field-val{flex:1;font-size:12.5px;font-weight:500;line-height:1.4;word-break:break-word}.field-section{padding:12px 16px 4px;font-size:10px;font-weight:800;color:var(--light);text-transform:uppercase;letter-spacing:.5px}.panel-updates{flex:1;display:flex;flex-direction:column;overflow:hidden}.tabs{display:flex;border-bottom:1px solid var(--border);flex-shrink:0}.tab{padding:10px 16px;font-size:12px;font-weight:600;color:var(--gray);cursor:pointer;border-bottom:2px solid transparent}.tab.active{color:#0073ea;border-bottom-color:#0073ea}.tab-pane{display:none;flex:1;flex-direction:column;overflow:hidden}.tab-pane.active{display:flex}.comment-area{padding:12px 14px;border-bottom:1px solid var(--border);flex-shrink:0}.comment-input{width:100%;border:1.5px solid var(--border);border-radius:var(--radius);padding:8px 10px;font-size:12.5px;font-family:inherit;resize:vertical;min-height:58px}.comment-input:focus{outline:none;border-color:#0073ea}.comment-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:6px}.cbtn{padding:5px 14px;border-radius:var(--radius);font-size:12px;font-weight:700;border:none;cursor:pointer}.cbtn-send{background:#0073ea;color:#fff}.cbtn-cancel{background:#f5f6f8;color:var(--gray)}.comment-list{flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:12px}.comment-item{display:flex;gap:10px}.comment-avatar{width:30px;height:30px;border-radius:50%;background:#0073ea;color:#fff;font-weight:700;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.comment-meta{display:flex;align-items:center;gap:8px;margin-bottom:3px}.comment-author{font-weight:700;font-size:12px}.comment-date{font-size:10px;color:var(--gray)}.comment-text{font-size:12.5px;line-height:1.5;white-space:pre-wrap}.no-comments{text-align:center;padding:30px;color:var(--light);font-size:12px;line-height:1.6}.activity-list{flex:1;overflow-y:auto;padding:12px 14px;display:flex;flex-direction:column;gap:9px}.act-item{display:flex;align-items:flex-start;gap:8px;font-size:12px;color:var(--gray)}.act-dot{width:6px;height:6px;border-radius:50%;background:var(--border);flex-shrink:0;margin-top:5px}.act-text{flex:1;line-height:1.4}.act-date{font-size:10px;white-space:nowrap}.status-popup{position:fixed;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,.14);z-index:500;overflow:hidden;width:180px;display:none}.status-opt{display:flex;align-items:center;gap:8px;padding:8px 14px;font-size:12.5px;font-weight:700;cursor:pointer}.status-opt:hover{background:#f5f6f8}.status-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}.loading{display:flex;align-items:center;justify-content:center;padding:60px;gap:12px;color:var(--gray);font-size:13px}.spinner{width:20px;height:20px;border:3px solid #f0f1f5;border-top-color:#0073ea;border-radius:50%;animation:spin .7s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.empty{text-align:center;padding:50px;color:var(--light)}.empty .ico{font-size:36px;margin-bottom:10px}.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px}.modal-bg.show{display:flex}.modal{background:#fff;border-radius:12px;padding:24px;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;box-shadow:0 12px 48px rgba(0,0,0,.2)}.modal h2{font-size:17px;font-weight:800;margin-bottom:18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.form-grid.full{grid-template-columns:1fr}.fg{display:flex;flex-direction:column;gap:4px}.fg label{font-size:10.5px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.3px}.fg input,.fg select,.fg textarea{padding:8px 10px;border:1.5px solid var(--border);border-radius:var(--radius);font-size:13px;font-family:inherit}.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:#0073ea}.fg textarea{resize:vertical;min-height:64px}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:20px}.mbtn{padding:8px 20px;border-radius:var(--radius);font-size:13px;font-weight:700;border:none;cursor:pointer}.mbtn-primary{background:#0073ea;color:#fff}.mbtn-ghost{background:#f5f6f8;color:var(--gray)}.ed-input{width:100%;padding:5px 8px;border:1.5px solid var(--border);border-radius:5px;font-size:12.5px;font-family:inherit;background:#fff;color:var(--text)}.ed-input:focus{outline:none;border-color:#0073ea;background:#f7fbff}.ed-input:disabled{background:#f5f6f8;color:var(--gray);cursor:not-allowed;border-color:#eee}textarea.ed-input{resize:vertical;min-height:52px;line-height:1.4}.ed-barra{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--border);padding:10px 16px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.ed-btn{padding:8px 16px;border:none;border-radius:7px;font-size:12.5px;font-weight:700;cursor:pointer}.ed-guardar{background:#0073ea;color:#fff}.ed-guardar:disabled{opacity:.5;cursor:not-allowed}.ed-cerrar{background:#037f4c;color:#fff;margin-left:auto}.ed-cerrar:hover{background:#026b40}.ed-aviso{font-size:11px;color:var(--gray);flex-basis:100%;line-height:1.5}.sello{background:linear-gradient(135deg,#037f4c,#025f39);color:#fff;padding:11px 16px;display:flex;align-items:center;gap:10px;font-size:12px}.sello .ic{font-size:20px}.sello b{display:block;font-size:12.5px;margin-bottom:1px}.sello span{opacity:.85;font-size:11px}.candado{display:inline-flex;align-items:center;gap:3px;font-size:9.5px;font-weight:800;background:#037f4c;color:#fff;padding:2px 7px;border-radius:10px;text-transform:uppercase;letter-spacing:.3px;vertical-align:middle}.conf-bg{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:2500;display:none;align-items:center;justify-content:center;padding:20px}.conf-bg.show{display:flex}.conf{background:#fff;border-radius:14px;padding:26px;max-width:460px;width:100%;box-shadow:0 14px 50px rgba(0,0,0,.25)}.conf .ic{font-size:38px;display:block;text-align:center;margin-bottom:12px}.conf h3{font-size:17px;font-weight:800;text-align:center;margin-bottom:10px}.conf p{font-size:13px;line-height:1.65;color:var(--gray);margin-bottom:14px}.conf .caja{background:#fff8e1;border-left:4px solid #f5a623;padding:11px 14px;border-radius:8px;font-size:12.5px;line-height:1.6;color:#7a5c00;margin-bottom:16px}.conf .datos{background:#f7f9fc;border-radius:8px;padding:11px 14px;font-size:12.5px;line-height:1.7;margin-bottom:16px}.conf .acciones{display:flex;gap:9px;justify-content:flex-end}.conf .acciones button{padding:9px 18px;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer}.conf .no{background:#f5f6f8;color:var(--gray)}.conf .si{background:#037f4c;color:#fff}.ev-lista{flex:1;overflow-y:auto;padding:14px}.ev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:11px}.ev-item{border:1px solid var(--border);border-radius:9px;overflow:hidden;background:#fff}.ev-item img{width:100%;height:105px;object-fit:cover;display:block;cursor:zoom-in;background:#f0f1f5}.ev-doc{height:105px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;background:#f7f9fc;text-decoration:none;color:var(--gray);transition:.12s}.ev-doc:hover{background:#e7f3ff}.ev-doc .ic{font-size:28px}.ev-doc .nm{font-size:9.5px;padding:0 8px;text-align:center;word-break:break-all;line-height:1.25}.ev-doc .ab{font-size:9px;font-weight:800;color:#0073ea;text-transform:uppercase;letter-spacing:.3px}.ev-item .meta{padding:7px 9px}.ev-item .zn{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;color:#0073ea;display:block;margin-bottom:2px}.ev-item .ds{font-size:11px;color:var(--text);line-height:1.35;word-break:break-word}.ev-item .fc{font-size:9.5px;color:var(--light);margin-top:3px}.ev-vacio{text-align:center;padding:40px 20px;color:var(--light);font-size:12px;line-height:1.7}.ev-vacio .ic{font-size:34px;display:block;margin-bottom:10px}.ev-cab{display:flex;align-items:center;gap:9px;margin-bottom:12px;font-size:12px;color:var(--gray)}.ev-cab b{color:var(--text)}.ev-visor{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:3000;display:none;align-items:center;justify-content:center;padding:26px;flex-direction:column;gap:14px}.ev-visor.abierto{display:flex}.ev-visor img{max-width:100%;max-height:78vh;border-radius:8px}.ev-visor .info{color:#fff;font-size:13px;text-align:center;max-width:560px}.ev-visor .info b{color:#f5a623}.ev-visor .cerrar{position:absolute;top:18px;right:22px;background:rgba(255,255,255,.15);color:#fff;border:none;width:38px;height:38px;border-radius:50%;font-size:19px;cursor:pointer}.ev-visor .bajar{background:#0073ea;color:#fff;border:none;border-radius:7px;padding:8px 20px;font-size:12.5px;font-weight:700;cursor:pointer;text-decoration:none}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:10px 22px;border-radius:8px;font-size:13px;font-weight:600;z-index:2000;opacity:0;transition:.25s;pointer-events:none;box-shadow:0 6px 20px rgba(0,0,0,.25)}.toast.show{opacity:1;bottom:34px}::-webkit-scrollbar{width:7px;height:7px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:#c5c7d4;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#a8aab9}</style><div class="top-bar"><div class="logo">🔧 <b>MIDAS</b> Automotriz</div><div class="top-divider"></div><div class="board-title">Proceso de Órdenes de Servicio</div><div class="top-bar-right"><span id="connDot" style="font-size:10px;color:#aaa">● Conectando…</span><button class="tbtn tbtn-ghost" onclick="loadOrders()">🔄 Actualizar</button><button class="tbtn tbtn-excel" onclick="exportExcel()">📊 Excel</button><button class="tbtn tbtn-primary" onclick="openNewModal()">+ Nueva Orden</button></div></div><div class="toolbar"><div class="search-box"><span class="ico">🔍</span><input type="text" id="searchInput" placeholder="Buscar cliente, placa, orden…" oninput="applyFilter()"/></div><div class="filter-chips" id="filterChips"></div><div class="toolbar-right"><button class="view-btn active" onclick="setView('table',this)">☰ Tabla</button><button class="view-btn" onclick="setView('kanban',this)">▦ Kanban</button></div></div><div class="main"><div class="board-area" id="boardArea"><div class="loading"><div class="spinner"></div> Cargando órdenes…</div></div><div class="side-panel" id="sidePanel"><div class="panel-header"><div style="flex:1"><div class="panel-breadcrumb">Midas Automotriz › Órdenes de Servicio</div><div class="panel-title" id="panelTitle">—</div></div><button class="panel-close" onclick="closePanel()">✕</button></div><div class="panel-body"><div class="panel-fields" id="panelFields"></div><div class="panel-updates"><div class="tabs"><div class="tab active" onclick="switchTab('updates',this)">💬 Actualizaciones <span id="cCount"></span></div><div class="tab" onclick="switchTab('fotos',this)">📷 Evidencias <span id="fCount"></span></div><div class="tab" onclick="switchTab('activity',this)">📋 Actividad</div></div><div class="tab-pane active" id="tab-updates"><div class="comment-area"><textarea class="comment-input" id="commentInput" placeholder="Escribe una actualización sobre esta orden…"></textarea><div class="comment-actions"><button class="cbtn cbtn-cancel" onclick="document.getElementById('commentInput').value=''">Cancelar</button><button class="cbtn cbtn-send" id="btnPost" onclick="postComment()">Actualizar</button></div></div><div class="comment-list" id="commentList"></div></div><div class="tab-pane" id="tab-fotos"><div class="ev-lista" id="evLista"></div></div><div class="tab-pane" id="tab-activity"><div class="activity-list" id="activityList"></div></div></div></div></div></div><div class="status-popup" id="statusPopup"></div><div class="toast" id="toast"></div><div class="conf-bg" id="confBg"><div class="conf"><span class="ic">🔒</span><h3>¿Terminar esta orden permanentemente?</h3><div class="datos" id="confDatos"></div><div class="caja"><b>Esto no se puede deshacer.</b><br>
  Una vez cerrada, la orden queda sellada en la base de datos: no se podrán
  cambiar sus datos, costos ni su estado, ni siquiera por el administrador.
  Solo el dueño podría reabrirla desde la base de datos.
@@ -17,11 +280,14 @@
  Las fotos de evidencia y los comentarios sí se podrán seguir agregando.
  </p><div class="acciones"><button class="no" onclick="cancelarCierre()">Cancelar</button><button class="si" id="btnConfSi" onclick="confirmarCierre()">Sí, cerrar definitivamente</button></div></div></div><div class="ev-visor" id="evVisor"><button class="cerrar" onclick="document.getElementById('evVisor').classList.remove('abierto')">✕</button><img id="evVisorImg" alt="Evidencia"/><div class="info" id="evVisorInfo"></div><a class="bajar" id="evVisorBajar" download target="_blank">⬇️ Descargar original</a></div><div class="modal-bg" id="newModal"><div class="modal"><h2>🔧 Nueva Orden de Servicio</h2><div class="form-grid"><div class="fg"><label>Nombre Cliente *</label><input id="n_cliente" placeholder="Juan García"/></div><div class="fg"><label>Teléfono</label><input id="n_tel" placeholder="55 1234 5678"/></div><div class="fg"><label>Marca *</label><input id="n_marca" placeholder="Toyota"/></div><div class="fg"><label>Modelo</label><input id="n_modelo" placeholder="Corolla"/></div><div class="fg"><label>Año</label><input id="n_anio" type="number" placeholder="2022"/></div><div class="fg"><label>Placas</label><input id="n_placas" placeholder="ABC-123-D"/></div><div class="fg"><label>Color</label><input id="n_color" placeholder="Blanco"/></div><div class="fg"><label>Kilometraje</label><input id="n_km" type="number" placeholder="45000"/></div><div class="fg"><label>Técnico Asignado</label><input id="n_tecnico" placeholder="Nombre del técnico"/></div><div class="fg"><label>Estado Inicial</label><select id="n_estado"></select></div><div class="fg"><label>Tipo de Servicio</label><input id="n_tipo" placeholder="Mantenimiento / Reparación"/></div><div class="fg"><label>Fecha Est. Entrega</label><input id="n_fecha_est" type="date"/></div></div><div class="form-grid full" style="margin-top:10px"><div class="fg"><label>Problema Reportado</label><textarea id="n_problema" placeholder="Lo que reporta el cliente…"></textarea></div><div class="fg"><label>Descripción del Servicio</label><textarea id="n_desc" placeholder="Trabajos a realizar…"></textarea></div></div><div class="form-grid" style="margin-top:10px"><div class="fg"><label>Mano de Obra ($)</label><input id="n_mano" type="number" step="0.01" placeholder="0.00"/></div><div class="fg"><label>Refacciones ($)</label><input id="n_refa" type="number" step="0.01" placeholder="0.00"/></div><div class="fg"><label>Anticipo ($)</label><input id="n_anticipo" type="number" step="0.01" placeholder="0.00"/></div><div class="fg"><label>Precio Total ($)</label><input id="n_total" type="number" step="0.01" placeholder="0.00"/></div></div><div class="modal-actions"><button class="mbtn mbtn-ghost" onclick="closeNewModal()">Cancelar</button><button class="mbtn mbtn-primary" id="btnSave" onclick="submitNewOrder()">✓ Crear Orden</button></div></div></div><script>const sb = window.sb;
 const ESTADOS = [
-{key:'recibido', label:'Recibido', color:'#a25ddc'},
-{key:'diagnostico', label:'Diagnóstico', color:'#0086c0'},
-{key:'en_proceso', label:'En Proceso', color:'#fdab3d'},
-{key:'listo', label:'Listo', color:'#00c875'},
-{key:'entregado', label:'Entregado', color:'#037f4c'},
+{key:'inspeccion_1',label:'Inspección 1',color:'#8e44ad'},
+{key:'inspeccion_2',label:'Inspección 2',color:'#a25ddc'},
+{key:'presupuesto', label:'Presupuesto', color:'#0086c0'},
+{key:'refacciones', label:'Refacciones', color:'#fdab3d'},
+{key:'en_proceso', label:'En Proceso', color:'#e67e22'},
+{key:'prefacturado',label:'Prefacturado',color:'#00c875'},
+{key:'facturado', label:'Facturado', color:'#037f4c'},
+{key:'entregado', label:'Entregado', color:'#0a6b45'},
 {key:'cancelado', label:'Cancelado', color:'#e2445c'},
 ];
 const E = {}; ESTADOS.forEach(e => E[e.key] = e);
@@ -80,7 +346,7 @@ const c=o.clientes||{}, v=o.equipos||{};
 return {
 id:o.id,
 numero: o.numero_orden ?? '—',
-estado: (o.estado||'recibido').toLowerCase(),
+estado: (o.estado||'inspeccion_1').toLowerCase(),
 cliente: c.nombre||'—',
 telefono: c.telefono||c.celular||'—',
 email: c.email||'—',
@@ -106,8 +372,21 @@ observaciones:o.observaciones||'',
 cerrada:!!o.cerrada,
 cerrada_at:o.cerrada_at,
 cerrada_por:o.cerrada_por,
+costo_partes:o.costo_partes,
+costo_mano_obra:o.costo_mano_obra,
+num_servicios:o.num_servicios,
+promesa_entrega:o.promesa_entrega,
 created_at:o.created_at,
 };
+}
+function utilidadHtml(o){
+const venta = Number(o.total)||0;
+const costo = (Number(o.costo_partes)||0)+(Number(o.costo_mano_obra)||0);
+if(!venta) return '<span style="color:var(--light)">Falta el total</span>';
+if(!costo) return '<span style="color:#d97706">Falta capturar el costo</span>';
+const u = venta-costo, m = (100*u/venta);
+const col = u<0?'#e2445c':m>=70?'#00c875':'#0073ea';
+return `<strong style="color:${col}">${money(u)}</strong><span style="color:${col};font-size:11px"> · ${m.toFixed(1)}% de margen</span>`;
 }
 function renderBoard(){
 const rows=getFiltered(), area=document.getElementById('boardArea');
@@ -169,7 +448,7 @@ document.getElementById('sidePanel').classList.remove('open');
 renderBoard();
 }
 function renderPanel(o){
-const st=E[o.estado]||E.recibido;
+const st=E[o.estado]||E.inspeccion_1;
 const bloq = !!o.cerrada; 
 const dis = bloq ? ' disabled' : '';
 const soyAdmin = window.MidasAuth.usuario &&
@@ -206,9 +485,15 @@ const F=[
 {sec:'Fechas'},
 {l:'Entrada', v: `${fmt(o.fecha_entrada)} ${o.hora_ingreso!=='—'?esc(o.hora_ingreso):''}`},
 {l:'Est. Entrega',v: inp('fecha_entrega_estimada', o.fecha_est?String(o.fecha_est).slice(0,10):'', 'date')},
-{sec:'Costos'},
+{sec:'Se le cobra al cliente'},
 {l:'Mano de obra',v: inp('mano_obra', o.mano_obra, 'number')},
 {l:'Refacciones', v: inp('refacciones_costo', o.refacciones, 'number')},
+{sec:'Lo que le cuesta al taller'},
+{l:'Costo partes', v: inp('costo_partes', o.costo_partes, 'number')},
+{l:'Costo mano obra',v: inp('costo_mano_obra', o.costo_mano_obra, 'number')},
+{l:'Nº servicios', v: inp('num_servicios', o.num_servicios, 'number')},
+{l:'Utilidad', v: utilidadHtml(o)},
+{sec:'Totales'},
 {l:'Subtotal', v: inp('subtotal', o.subtotal, 'number')},
 {l:'IVA', v: inp('iva', o.iva, 'number')},
 {l:'Total', v: inp('precio_total', o.total, 'number')},
@@ -466,7 +751,7 @@ closeNewModal();
 ['n_cliente','n_tel','n_marca','n_modelo','n_anio','n_placas','n_color','n_km',
 'n_tecnico','n_tipo','n_fecha_est','n_problema','n_desc','n_mano','n_refa','n_anticipo','n_total']
 .forEach(id=>document.getElementById(id).value='');
-document.getElementById('n_estado').value='recibido';
+document.getElementById('n_estado').value='inspeccion_1';
 await loadOrders();
 toast(`✓ Orden #${siguiente} creada en Supabase`);
 }catch(e){
@@ -555,7 +840,7 @@ return dt.toLocaleString('es-MX',{day:'2-digit',month:'short',hour:'2-digit',min
  Las imágenes se comprimen solas para subir rápido.<br><small>Formatos: JPG, PNG, WEBP, HEIC, GIF, BMP, TIFF y PDF · hasta 15 MB c/u</small></p><div class="foto-botones"><label class="foto-btn principal" for="inpArchivo">📁 Seleccionar archivos</label><label class="foto-btn" for="inpCamara">📸 Tomar foto</label><span class="foto-cuenta" id="fotoCuenta">Sin archivos</span></div><input type="file" id="inpCamara" class="foto-oculto"
  accept="image/*" capture="environment"/><input type="file" id="inpArchivo" class="foto-oculto"
  accept="image/*,.jpg,.jpeg,.png,.webp,.heic,.heif,.gif,.bmp,.tif,.tiff,application/pdf,.pdf"
- multiple/><label class="foto-zona" id="fotoZona" for="inpArchivo"><span class="ic">📁</span><p>Toca aquí para seleccionar fotos de tu galería.<br><small>En computadora también puedes arrastrarlas.</small></p></label><div class="foto-grid" id="fotoGrid"></div><div class="section-title">🧰 Accesorios</div><div class="inv-grid three"><div class="inv-item"><span>Gato</span><div class="sinno"><label><input type="radio" name="acc_gato" value="si"/>SI</label><label><input type="radio" name="acc_gato" value="no"/>NO</label></div></div><div class="inv-item"><span>Maneral de Gato</span><div class="sinno"><label><input type="radio" name="acc_maneral" value="si"/>SI</label><label><input type="radio" name="acc_maneral" value="no"/>NO</label></div></div><div class="inv-item"><span>Llave de Ruedas</span><div class="sinno"><label><input type="radio" name="acc_llave" value="si"/>SI</label><label><input type="radio" name="acc_llave" value="no"/>NO</label></div></div><div class="inv-item"><span>Estuche de Herramientas</span><div class="sinno"><label><input type="radio" name="acc_estuche" value="si"/>SI</label><label><input type="radio" name="acc_estuche" value="no"/>NO</label></div></div><div class="inv-item"><span>Triángulo de Seguridad</span><div class="sinno"><label><input type="radio" name="acc_triangulo" value="si"/>SI</label><label><input type="radio" name="acc_triangulo" value="no"/>NO</label></div></div><div class="inv-item"><span>Llanta de Refacción</span><div class="sinno"><label><input type="radio" name="acc_llanta_ref" value="si"/>SI</label><label><input type="radio" name="acc_llanta_ref" value="no"/>NO</label></div></div><div class="inv-item"><span>Extinguidor</span><div class="sinno"><label><input type="radio" name="acc_extinguidor" value="si"/>SI</label><label><input type="radio" name="acc_extinguidor" value="no"/>NO</label></div></div></div><div class="section-title">⚙️ Componentes Mecánicos</div><div class="inv-grid three"><div class="inv-item"><span>Claxon</span><div class="sinno"><label><input type="radio" name="mec_claxon" value="si"/>SI</label><label><input type="radio" name="mec_claxon" value="no"/>NO</label></div></div><div class="inv-item"><span>Tapón de Aceite</span><div class="sinno"><label><input type="radio" name="mec_tapon_aceite" value="si"/>SI</label><label><input type="radio" name="mec_tapon_aceite" value="no"/>NO</label></div></div><div class="inv-item"><span>Tapón de Radiador</span><div class="sinno"><label><input type="radio" name="mec_tapon_radiador" value="si"/>SI</label><label><input type="radio" name="mec_tapon_radiador" value="no"/>NO</label></div></div><div class="inv-item"><span>Varilla de Aceite</span><div class="sinno"><label><input type="radio" name="mec_varilla" value="si"/>SI</label><label><input type="radio" name="mec_varilla" value="no"/>NO</label></div></div><div class="inv-item"><span>Filtro de Aire</span><div class="sinno"><label><input type="radio" name="mec_filtro" value="si"/>SI</label><label><input type="radio" name="mec_filtro" value="no"/>NO</label></div></div><div class="inv-item"><span>Batería (MCA)</span><div class="sinno"><label><input type="radio" name="mec_bateria" value="si"/>SI</label><label><input type="radio" name="mec_bateria" value="no"/>NO</label></div></div></div><div class="section-title">📝 Descripción del Servicio</div><div class="grid"><div><label>Tipo de servicio</label><select id="tipo_servicio"><option value="">— Selecciona —</option><option value="mantenimiento_preventivo">Mantenimiento preventivo</option><option value="mantenimiento_correctivo">Mantenimiento correctivo</option><option value="diagnostico">Diagnóstico</option><option value="reparacion">Reparación</option><option value="instalacion">Instalación</option><option value="revision_general">Revisión general</option><option value="otro">Otro</option></select></div><div><label>Vigencia</label><input type="text" id="vigencia" placeholder="30 días"/></div><div class="col-span2"><label>Descripción del Servicio Solicitado</label><textarea id="descripcion_servicio" placeholder="Describe el servicio que se solicita..."></textarea></div><div class="col-span2"><label>Problema Reportado por el Cliente</label><textarea id="problema" placeholder="Describe el problema o falla que presenta el vehículo..."></textarea></div><div><label>Diagnóstico y Plazo Máximo</label><textarea id="plazo_maximo" placeholder="Diagnóstico técnico y tiempo estimado..."></textarea></div><div><label>Nombre de quien elabora</label><input type="text" id="nombre_elaboro" placeholder="Técnico o recepcionista"/></div></div><div class="section-title">💰 Presupuesto</div><table class="presup-table"><thead><tr><th style="width:60%">Concepto</th><th>Importe (M.N.)</th></tr></thead><tbody><tr><td>Mano de Obra</td><td><input type="number" id="mano_obra" placeholder="0.00" min="0" step="0.01" oninput="calcTotal()"/></td></tr><tr><td>Refacciones</td><td><input type="number" id="refacciones_costo" placeholder="0.00" min="0" step="0.01" oninput="calcTotal()"/></td></tr><tr><td>Otros Materiales</td><td><input type="number" id="otros_materiales" placeholder="0.00" min="0" step="0.01" oninput="calcTotal()"/></td></tr><tr><td>Cargos Adicionales o Extraordinarios</td><td><input type="number" id="cargos_adicionales" placeholder="0.00" min="0" step="0.01" oninput="calcTotal()"/></td></tr><tr><td>Seguro</td><td><input type="number" id="seguro_costo" placeholder="0.00" min="0" step="0.01" oninput="calcTotal()"/></td></tr><tr class="total-row"><td><strong>Subtotal</strong></td><td><input type="number" id="subtotal" placeholder="0.00" readonly style="font-weight:700"/></td></tr><tr><td>I.V.A. (16%)</td><td><input type="number" id="iva" placeholder="0.00" readonly/></td></tr><tr class="grand-total"><td><strong>PRECIO TOTAL</strong></td><td><input type="number" id="precio_total" placeholder="0.00" readonly/></td></tr><tr><td>Anticipo</td><td><input type="number" id="anticipo" placeholder="0.00" min="0" step="0.01" oninput="calcResta()"/></td></tr><tr class="total-row"><td><strong>Resta</strong></td><td><input type="number" id="resta" placeholder="0.00" readonly style="font-weight:700"/></td></tr></tbody></table><div class="section-title">✍️ Autorización del Consumidor</div><div class="autoriza-grid"><div class="autoriza-item"><p>¿El consumidor autoriza que se utilicen partes o refacciones usadas o reconstruidas?</p><div class="radio-group"><label><input type="radio" name="autoriza_partes" value="si"/> Sí</label><label><input type="radio" name="autoriza_partes" value="no" checked/> No</label></div></div><div class="autoriza-item"><p>¿El consumidor suministra partes, refacciones o materiales?</p><div class="radio-group"><label><input type="radio" name="suministra_partes" value="si"/> Sí</label><label><input type="radio" name="suministra_partes" value="no" checked/> No</label></div></div></div><div class="section-title">📊 Seguimiento</div><div class="grid"><div><label>Técnico Asignado</label><input type="text" id="tecnico" placeholder="Nombre del técnico"/></div><div><label>Estado</label><select id="estado"><option value="recibido">Recibido</option><option value="en_proceso">En proceso</option><option value="listo">Listo</option><option value="entregado">Entregado</option><option value="cancelado">Cancelado</option></select></div><div class="col-span2"><label>Observaciones Adicionales</label><textarea id="observaciones" placeholder="Accesorios entregados, condiciones especiales, notas..."></textarea></div></div><div class="section-title">🚪 Registro de Salida de la Unidad</div><div class="grid"><div><label>Fecha de Salida Real</label><input type="date" id="fecha_salida"/></div><div><label>Hora de Salida Real</label><input type="time" id="hora_salida"/></div></div><div class="foto-progreso" id="fotoProgreso"><span id="fotoProgTexto">Subiendo fotos…</span><div class="foto-barra"><div id="fotoBarra"></div></div></div><button type="submit" class="btn" id="btnEnviar">✅ Registrar Orden de Servicio</button></form></div><div class="foto-visor" id="fotoVisor"><button class="cerrar" type="button" onclick="document.getElementById('fotoVisor').classList.remove('abierto')">✕</button><img id="fotoVisorImg" alt="Evidencia"/></div><script>const SUPABASE_URL='https://aslnukmynjhmtelijgmg.supabase.co';
+ multiple/><label class="foto-zona" id="fotoZona" for="inpArchivo"><span class="ic">📁</span><p>Toca aquí para seleccionar fotos de tu galería.<br><small>En computadora también puedes arrastrarlas.</small></p></label><div class="foto-grid" id="fotoGrid"></div><div class="section-title">🧰 Accesorios</div><div class="inv-grid three"><div class="inv-item"><span>Gato</span><div class="sinno"><label><input type="radio" name="acc_gato" value="si"/>SI</label><label><input type="radio" name="acc_gato" value="no"/>NO</label></div></div><div class="inv-item"><span>Maneral de Gato</span><div class="sinno"><label><input type="radio" name="acc_maneral" value="si"/>SI</label><label><input type="radio" name="acc_maneral" value="no"/>NO</label></div></div><div class="inv-item"><span>Llave de Ruedas</span><div class="sinno"><label><input type="radio" name="acc_llave" value="si"/>SI</label><label><input type="radio" name="acc_llave" value="no"/>NO</label></div></div><div class="inv-item"><span>Estuche de Herramientas</span><div class="sinno"><label><input type="radio" name="acc_estuche" value="si"/>SI</label><label><input type="radio" name="acc_estuche" value="no"/>NO</label></div></div><div class="inv-item"><span>Triángulo de Seguridad</span><div class="sinno"><label><input type="radio" name="acc_triangulo" value="si"/>SI</label><label><input type="radio" name="acc_triangulo" value="no"/>NO</label></div></div><div class="inv-item"><span>Llanta de Refacción</span><div class="sinno"><label><input type="radio" name="acc_llanta_ref" value="si"/>SI</label><label><input type="radio" name="acc_llanta_ref" value="no"/>NO</label></div></div><div class="inv-item"><span>Extinguidor</span><div class="sinno"><label><input type="radio" name="acc_extinguidor" value="si"/>SI</label><label><input type="radio" name="acc_extinguidor" value="no"/>NO</label></div></div></div><div class="section-title">⚙️ Componentes Mecánicos</div><div class="inv-grid three"><div class="inv-item"><span>Claxon</span><div class="sinno"><label><input type="radio" name="mec_claxon" value="si"/>SI</label><label><input type="radio" name="mec_claxon" value="no"/>NO</label></div></div><div class="inv-item"><span>Tapón de Aceite</span><div class="sinno"><label><input type="radio" name="mec_tapon_aceite" value="si"/>SI</label><label><input type="radio" name="mec_tapon_aceite" value="no"/>NO</label></div></div><div class="inv-item"><span>Tapón de Radiador</span><div class="sinno"><label><input type="radio" name="mec_tapon_radiador" value="si"/>SI</label><label><input type="radio" name="mec_tapon_radiador" value="no"/>NO</label></div></div><div class="inv-item"><span>Varilla de Aceite</span><div class="sinno"><label><input type="radio" name="mec_varilla" value="si"/>SI</label><label><input type="radio" name="mec_varilla" value="no"/>NO</label></div></div><div class="inv-item"><span>Filtro de Aire</span><div class="sinno"><label><input type="radio" name="mec_filtro" value="si"/>SI</label><label><input type="radio" name="mec_filtro" value="no"/>NO</label></div></div><div class="inv-item"><span>Batería (MCA)</span><div class="sinno"><label><input type="radio" name="mec_bateria" value="si"/>SI</label><label><input type="radio" name="mec_bateria" value="no"/>NO</label></div></div></div><div class="section-title">📝 Descripción del Servicio</div><div class="grid"><div><label>Tipo de servicio</label><select id="tipo_servicio"><option value="">— Selecciona —</option><option value="mantenimiento_preventivo">Mantenimiento preventivo</option><option value="mantenimiento_correctivo">Mantenimiento correctivo</option><option value="diagnostico">Diagnóstico</option><option value="reparacion">Reparación</option><option value="instalacion">Instalación</option><option value="revision_general">Revisión general</option><option value="otro">Otro</option></select></div><div><label>Vigencia</label><input type="text" id="vigencia" placeholder="30 días"/></div><div class="col-span2"><label>Descripción del Servicio Solicitado</label><textarea id="descripcion_servicio" placeholder="Describe el servicio que se solicita..."></textarea></div><div class="col-span2"><label>Problema Reportado por el Cliente</label><textarea id="problema" placeholder="Describe el problema o falla que presenta el vehículo..."></textarea></div><div><label>Diagnóstico y Plazo Máximo</label><textarea id="plazo_maximo" placeholder="Diagnóstico técnico y tiempo estimado..."></textarea></div><div><label>Nombre de quien elabora</label><input type="text" id="nombre_elaboro" placeholder="Técnico o recepcionista"/></div></div><div class="section-title">💰 Presupuesto</div><table class="presup-table"><thead><tr><th style="width:60%">Concepto</th><th>Importe (M.N.)</th></tr></thead><tbody><tr><td>Mano de Obra</td><td><input type="number" id="mano_obra" placeholder="0.00" min="0" step="0.01" oninput="calcTotal()"/></td></tr><tr><td>Refacciones</td><td><input type="number" id="refacciones_costo" placeholder="0.00" min="0" step="0.01" oninput="calcTotal()"/></td></tr><tr><td>Otros Materiales</td><td><input type="number" id="otros_materiales" placeholder="0.00" min="0" step="0.01" oninput="calcTotal()"/></td></tr><tr><td>Cargos Adicionales o Extraordinarios</td><td><input type="number" id="cargos_adicionales" placeholder="0.00" min="0" step="0.01" oninput="calcTotal()"/></td></tr><tr><td>Seguro</td><td><input type="number" id="seguro_costo" placeholder="0.00" min="0" step="0.01" oninput="calcTotal()"/></td></tr><tr class="total-row"><td><strong>Subtotal</strong></td><td><input type="number" id="subtotal" placeholder="0.00" readonly style="font-weight:700"/></td></tr><tr><td>I.V.A. (16%)</td><td><input type="number" id="iva" placeholder="0.00" readonly/></td></tr><tr class="grand-total"><td><strong>PRECIO TOTAL</strong></td><td><input type="number" id="precio_total" placeholder="0.00" readonly/></td></tr><tr><td>Anticipo</td><td><input type="number" id="anticipo" placeholder="0.00" min="0" step="0.01" oninput="calcResta()"/></td></tr><tr class="total-row"><td><strong>Resta</strong></td><td><input type="number" id="resta" placeholder="0.00" readonly style="font-weight:700"/></td></tr></tbody></table><div class="section-title">✍️ Autorización del Consumidor</div><div class="autoriza-grid"><div class="autoriza-item"><p>¿El consumidor autoriza que se utilicen partes o refacciones usadas o reconstruidas?</p><div class="radio-group"><label><input type="radio" name="autoriza_partes" value="si"/> Sí</label><label><input type="radio" name="autoriza_partes" value="no" checked/> No</label></div></div><div class="autoriza-item"><p>¿El consumidor suministra partes, refacciones o materiales?</p><div class="radio-group"><label><input type="radio" name="suministra_partes" value="si"/> Sí</label><label><input type="radio" name="suministra_partes" value="no" checked/> No</label></div></div></div><div class="section-title">📊 Seguimiento</div><div class="grid"><div><label>Técnico Asignado</label><input type="text" id="tecnico" placeholder="Nombre del técnico"/></div><div><label>Estado</label><select id="estado"><option value="inspeccion_1">Inspección 1</option><option value="inspeccion_2">Inspección 2</option><option value="presupuesto">Presupuesto</option><option value="refacciones">Refacciones</option><option value="en_proceso">En Proceso</option><option value="prefacturado">Prefacturado</option></select></div><div class="col-span2"><label>Observaciones Adicionales</label><textarea id="observaciones" placeholder="Accesorios entregados, condiciones especiales, notas..."></textarea></div></div><div class="section-title">🚪 Registro de Salida de la Unidad</div><div class="grid"><div><label>Fecha de Salida Real</label><input type="date" id="fecha_salida"/></div><div><label>Hora de Salida Real</label><input type="time" id="hora_salida"/></div></div><div class="foto-progreso" id="fotoProgreso"><span id="fotoProgTexto">Subiendo fotos…</span><div class="foto-barra"><div id="fotoBarra"></div></div></div><button type="submit" class="btn" id="btnEnviar">✅ Registrar Orden de Servicio</button></form></div><div class="foto-visor" id="fotoVisor"><button class="cerrar" type="button" onclick="document.getElementById('fotoVisor').classList.remove('abierto')">✕</button><img id="fotoVisorImg" alt="Evidencia"/></div><script>const SUPABASE_URL='https://aslnukmynjhmtelijgmg.supabase.co';
 const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFzbG51a215bmpobXRlbGlqZ21nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk5MDg2OTYsImV4cCI6MjA5NTQ4NDY5Nn0.ncjW3E6ckfXlaetG7BJL5V4JpTZxy3UaIcu9uDMV5yw';
 const sbCliente=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
 const now=new Date();
@@ -904,7 +1189,506 @@ alerta.textContent='Error al guardar: '+(err.message||'Intenta de nuevo.');
 }finally{
 btn.disabled=false;btn.textContent='✅ Registrar Orden de Servicio';
 }
-});</script></template><template id="tpl-evidencias" data-pub="0"><style>:root{--primary:#1a1a2e;--accent:#e94560;--bg:#f0f4f8;--border:#e1e4e8;--text:#2c3e50;--gray:#718096;--light:#c5c7d4}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:14px}header{background:var(--primary);color:#fff;padding:13px 22px;display:flex;align-items:center;gap:13px;flex-wrap:wrap;position:sticky;top:0;z-index:60;box-shadow:0 2px 8px rgba(0,0,0,.25)}header h1{font-size:16px;font-weight:800;flex:1;min-width:170px}header .badge{font-size:10.5px;background:rgba(255,255,255,.14);padding:3px 11px;border-radius:20px}.barra{background:#fff;border-bottom:1px solid var(--border);padding:13px 22px;position:sticky;top:50px;z-index:50}.buscador{position:relative;max-width:620px;margin:0 auto}.buscador input{width:100%;padding:13px 15px 13px 44px;border:2px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;transition:.15s}.buscador input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(233,69,96,.09)}.buscador .ic{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--gray)}.buscador .limpiar{position:absolute;right:11px;top:50%;transform:translateY(-50%);background:#f0f4f8;border:none;width:26px;height:26px;border-radius:50%;cursor:pointer;color:var(--gray);font-size:14px;display:none}.buscador .limpiar.ver{display:block}.pistas{max-width:620px;margin:9px auto 0;font-size:11.5px;color:var(--light);text-align:center}.pistas b{color:var(--gray)}.cont{max-width:1120px;margin:0 auto;padding:20px 22px 50px}.resumen{font-size:12.5px;color:var(--gray);margin-bottom:16px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}.resumen b{color:var(--text)}.orden{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,.05)}.orden-cab{padding:13px 17px;border-bottom:1px solid #f0f1f5;display:flex;align-items:center;gap:11px;flex-wrap:wrap;background:#fafbfc}.orden-num{font-weight:800;color:var(--primary);font-size:14px}.orden-cliente{font-weight:700;font-size:13.5px}.orden-veh{font-size:12px;color:var(--gray)}.placa{font-family:monospace;background:#eef2f7;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;color:var(--primary)}.orden-fecha{margin-left:auto;font-size:11px;color:var(--light);white-space:nowrap}.chip-estado{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;padding:3px 9px;border-radius:20px;color:#fff}.fotos{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:11px;padding:15px 17px}.foto{border:1px solid var(--border);border-radius:9px;overflow:hidden;background:#fff}.foto img{width:100%;height:118px;object-fit:cover;display:block;cursor:zoom-in;background:#eef2f7}.foto .doc{height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:#f7f9fc;text-decoration:none;color:var(--gray)}.foto .doc .ic{font-size:27px}.foto .doc .ab{font-size:9px;font-weight:800;color:#0073ea;text-transform:uppercase}.foto .info{padding:7px 9px}.foto .zn{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;color:#0073ea;display:block;margin-bottom:2px}.foto .ds{font-size:11px;line-height:1.35;word-break:break-word}.foto .fc{font-size:9.5px;color:var(--light);margin-top:3px}.vacio{text-align:center;padding:60px 22px;color:var(--light)}.vacio .ic{font-size:44px;display:block;margin-bottom:13px}.vacio h3{font-size:16px;color:var(--gray);margin-bottom:7px;font-weight:700}.vacio p{font-size:12.5px;line-height:1.65}.cargando{display:flex;align-items:center;justify-content:center;padding:60px;gap:12px;color:var(--gray);font-size:13px}.spin{width:22px;height:22px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:g .7s linear infinite}@keyframes g{to{transform:rotate(360deg)}}.visor{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:3000;display:none;align-items:center;justify-content:center;flex-direction:column;gap:15px;padding:26px}.visor.abierto{display:flex}.visor img{max-width:100%;max-height:74vh;border-radius:8px}.visor .datos{color:#fff;text-align:center;font-size:13px;line-height:1.6;max-width:600px}.visor .datos b{color:#f5a623}.visor .datos .sub{color:#9aa3b5;font-size:11.5px}.visor .cerrar{position:absolute;top:17px;right:21px;background:rgba(255,255,255,.15);color:#fff;border:none;width:38px;height:38px;border-radius:50%;font-size:19px;cursor:pointer}.visor .bajar{background:#0073ea;color:#fff;border:none;border-radius:8px;padding:9px 22px;font-size:12.5px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}</style><header><span style="font-size:19px">📷</span><h1>Evidencias Fotográficas</h1><span class="badge" id="hEstado">Cargando…</span></header><div class="barra"><div class="buscador"><span class="ic">🔍</span><input type="text" id="q" placeholder="Buscar por cliente, placas, marca…" autocomplete="off"/><button class="limpiar" id="btnLimpiar" title="Limpiar">✕</button></div><div class="pistas">
+});</script></template><template id="tpl-analisis" data-pub="0"><style>:root{--primary:#1a1a2e;--accent:#e94560;--gold:#f5a623;--bg:#f0f4f8;--border:#e1e4e8;--text:#2c3e50;--gray:#718096;--light:#c5c7d4;--azul:#0073ea;--verde:#00c875;--naranja:#fdab3d;--morado:#a25ddc;--rojo:#e2445c}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:14px}header{background:var(--primary);color:#fff;padding:12px 20px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}header h1{font-size:16px;font-weight:800;flex:1;min-width:150px}.hbtn{background:rgba(255,255,255,.12);color:#fff;border:none;border-radius:6px;padding:6px 12px;font-size:11.5px;font-weight:700;cursor:pointer}.hbtn:hover{background:var(--accent)}.tabs{background:var(--primary);display:flex;overflow-x:auto;padding:0 12px;border-top:1px solid rgba(255,255,255,.08);position:sticky;top:0;z-index:40}.tab{padding:11px 17px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.6);cursor:pointer;white-space:nowrap;border-bottom:3px solid transparent;transition:.14s}.tab:hover{color:#fff}.tab.on{color:#fff;border-bottom-color:var(--accent);background:rgba(255,255,255,.05)}.pane{display:none;padding:20px;max-width:1250px;margin:0 auto}.pane.on{display:block}h2.sec{font-size:15px;font-weight:800;margin:0 0 4px}p.sub{font-size:12px;color:var(--gray);margin-bottom:16px;line-height:1.55}.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:12px;margin-bottom:22px}.kpi{background:#fff;border-radius:11px;padding:15px;box-shadow:0 1px 5px rgba(0,0,0,.06);border-top:3px solid var(--azul)}.kpi h4{font-size:10px;color:var(--gray);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}.kpi .n{font-size:24px;font-weight:900;line-height:1.1}.kpi .s{font-size:10.5px;color:var(--light);margin-top:3px}.card{background:#fff;border-radius:12px;padding:17px;box-shadow:0 1px 5px rgba(0,0,0,.06);margin-bottom:16px}.card h3{font-size:13.5px;font-weight:800;margin-bottom:3px}.card .cap{font-size:11.5px;color:var(--gray);margin-bottom:13px;line-height:1.5}.dos{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:900px){.dos{grid-template-columns:1fr}}.chart-box{position:relative;height:290px}table{width:100%;border-collapse:collapse;font-size:12.5px}th{background:#f5f6f8;padding:8px 11px;text-align:left;font-size:10.5px;font-weight:800;color:var(--gray);text-transform:uppercase;letter-spacing:.3px;border-bottom:2px solid var(--border)}td{padding:8px 11px;border-bottom:1px solid #f2f3f6}tr:last-child td{border-bottom:none}.num{text-align:right;font-variant-numeric:tabular-nums}.b{font-weight:700}.gantt-fila{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid #f2f3f6}.gantt-et{width:210px;flex-shrink:0;font-size:12px;line-height:1.35}.gantt-et b{display:block;font-size:12.5px}.gantt-et span{color:var(--gray);font-size:10.5px}.gantt-pista{flex:1;height:24px;background:#f5f6f8;border-radius:5px;position:relative;min-width:160px}.gantt-barra{position:absolute;height:100%;border-radius:5px;display:flex;align-items:center;padding:0 8px;font-size:10.5px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden}.gantt-hoy{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--rojo);z-index:3}.gantt-esc{display:flex;justify-content:space-between;font-size:10px;color:var(--light);margin-left:220px;padding-top:5px;border-top:1px solid var(--border);margin-top:6px}.doc-barra{display:flex;gap:9px;align-items:center;margin-bottom:14px;flex-wrap:wrap}.doc-barra select,.doc-barra input{padding:8px 11px;border:1.5px solid var(--border);border-radius:7px;font-size:13px;font-family:inherit}.doc-barra select{min-width:220px;background:#fff}.btn{padding:8px 15px;border:none;border-radius:7px;font-size:12.5px;font-weight:700;cursor:pointer}.b-nuevo{background:var(--azul);color:#fff}.b-guardar{background:var(--verde);color:#fff}.b-borrar{background:#f5f6f8;color:var(--rojo)}.btn:hover{filter:brightness(1.08)}.btn:disabled{opacity:.5;cursor:not-allowed}.ed{width:100%;padding:7px 9px;border:1px solid var(--border);border-radius:5px;font-size:12.5px;font-family:inherit;background:#fff}.ed:focus{outline:none;border-color:var(--azul);background:#f7fbff}textarea.ed{resize:vertical;min-height:44px;line-height:1.45}.mini{width:58px;text-align:center}.fila-btn{background:none;border:none;color:var(--rojo);cursor:pointer;font-size:15px;padding:2px 6px}.add{background:#f0f4f8;border:1.5px dashed var(--light);color:var(--gray);border-radius:7px;padding:9px;width:100%;cursor:pointer;font-size:12px;font-weight:700;margin-top:9px}.add:hover{border-color:var(--azul);color:var(--azul);background:#f7fbff}.sipoc{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}@media(max-width:900px){.sipoc{grid-template-columns:1fr}}.sipoc-col{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden}.sipoc-cab{padding:9px;text-align:center;color:#fff;font-weight:800;font-size:11.5px}.sipoc-cab span{display:block;font-size:9px;opacity:.85;font-weight:600;text-transform:none}.sipoc-cuerpo{padding:9px}.sipoc-cuerpo textarea{min-height:170px}.ishi{background:#fff;border-radius:10px;padding:15px;overflow-x:auto}.ishi-cats{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}@media(max-width:800px){.ishi-cats{grid-template-columns:1fr}}.ishi-cat{border:1px solid var(--border);border-radius:9px;overflow:hidden}.ishi-cat h5{padding:7px 10px;font-size:11.5px;font-weight:800;color:#fff}.ishi-cat .cuerpo{padding:9px}.ishi-causa{display:flex;gap:5px;margin-bottom:5px}.porque{display:flex;align-items:center;gap:9px;margin-bottom:8px}.porque .n{width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.tabla-ed{overflow-x:auto}.tabla-ed table{min-width:760px}.npr{font-weight:800;text-align:center;border-radius:5px;padding:4px}.npr-b{background:#d4edda;color:#155724}.npr-m{background:#fff3cd;color:#856404}.npr-a{background:#f8d7da;color:#721c24}.vacio{text-align:center;padding:44px 20px;color:var(--light)}.vacio .ic{font-size:38px;display:block;margin-bottom:11px}.cargando{display:flex;align-items:center;justify-content:center;padding:50px;gap:11px;color:var(--gray)}.spin{width:20px;height:20px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:g .7s linear infinite}@keyframes g{to{transform:rotate(360deg)}}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;z-index:900;opacity:0;transition:.25s;pointer-events:none}.toast.show{opacity:1;bottom:32px}</style><header><span style="font-size:18px">📊</span><h1>Análisis y Mejora de Procesos</h1><button class="hbtn" onclick="recargar()">🔄 Actualizar</button></header><div class="tabs" id="tabs"></div><div class="pane on" id="p-tablero"><div class="kpis" id="kpis"></div><div class="dos"><div class="card"><h3>Órdenes por estado</h3><div class="cap">En qué etapa está el trabajo del taller ahora mismo.</div><div class="chart-box"><canvas id="cEstado"></canvas></div></div><div class="card"><h3>Producción por mes</h3><div class="cap">Órdenes atendidas y dinero facturado cada mes.</div><div class="chart-box"><canvas id="cMes"></canvas></div></div></div><div class="card"><h3>Desempeño por técnico</h3><div class="cap">Carga de trabajo, tiempo promedio y facturación de cada técnico.</div><div id="tTecnicos"></div></div></div><div class="pane" id="p-pareto"><h2 class="sec">Diagrama de Pareto</h2><p class="sub">La regla 80/20: pocas causas generan la mayoría de los efectos.
+ La línea marca el acumulado — donde cruza el 80% están los pocos servicios que
+ concentran casi todo tu trabajo o tu dinero.</p><div class="card"><h3>Por número de casos</h3><div class="cap">Qué tipo de servicio entra con más frecuencia al taller.</div><div class="chart-box"><canvas id="cParetoCasos"></canvas></div></div><div class="card"><h3>Por importe facturado</h3><div class="cap">Dónde está realmente el dinero. No siempre es lo que más entra.</div><div class="chart-box"><canvas id="cParetoImporte"></canvas></div></div><div class="card"><h3>Detalle</h3><div id="tPareto"></div></div></div><div class="pane" id="p-gantt"><h2 class="sec">Diagrama de Gantt</h2><p class="sub">Línea de tiempo de cada orden: desde que entró el vehículo hasta la fecha
+ prometida de entrega. La línea roja es hoy — lo que quede a su izquierda va retrasado.</p><div class="card"><div id="gantt"></div></div></div><div class="pane" id="p-costo"><h2 class="sec">Análisis Costo–Tiempo</h2><p class="sub">Cuánto cuesta y cuánto tarda cada tipo de servicio. Sirve para cotizar mejor
+ y detectar trabajos que consumen mucho tiempo pero dejan poco.</p><div class="dos"><div class="card"><h3>Costo contra duración</h3><div class="cap">Cada punto es un tipo de servicio. Arriba-izquierda es lo ideal:
+ deja mucho y tarda poco.</div><div class="chart-box"><canvas id="cDispersion"></canvas></div></div><div class="card"><h3>Rendimiento por día</h3><div class="cap">Pesos generados por cada día que el vehículo ocupa el taller.</div><div class="chart-box"><canvas id="cRendimiento"></canvas></div></div></div><div class="card"><h3>Detalle</h3><div id="tCosto"></div></div></div><div class="pane" id="p-sipoc"><h2 class="sec">Mapa SIPOC</h2><p class="sub">Vista de un proceso completo en cinco columnas: quién surte, qué entra,
+ qué se hace, qué sale y quién lo recibe. Sirve para ver el proceso de principio a fin
+ antes de intentar mejorarlo.</p><div class="doc-barra" id="bar-sipoc"></div><div id="ed-sipoc"></div></div><div class="pane" id="p-amef"><h2 class="sec">AMEF — Análisis de Modo y Efecto de Falla</h2><p class="sub">Para cada paso del proceso: qué puede fallar, qué tan grave sería, qué tan
+ seguido pasa y qué tan fácil se detecta. El sistema calcula el NPR
+ (Severidad × Ocurrencia × Detección) y ordena por riesgo.
+ <b>NPR arriba de 100 pide acción inmediata.</b></p><div class="doc-barra" id="bar-amef"></div><div id="ed-amef"></div></div><div class="pane" id="p-causa"><h2 class="sec">Análisis de Causa Raíz</h2><p class="sub">Diagrama de Ishikawa (las 6M) para ordenar las causas posibles, más los
+ 5 Porqués para llegar al origen real del problema y no quedarse en el síntoma.</p><div class="doc-barra" id="bar-causa"></div><div id="ed-causa"></div></div><div class="pane" id="p-pugh"><h2 class="sec">Matriz de Pugh</h2><p class="sub">Compara alternativas contra una referencia usando criterios con peso.
+ Califica cada opción con <b>+1</b> (mejor), <b>0</b> (igual) o <b>−1</b> (peor).
+ El sistema suma la puntuación ponderada y marca la mejor opción.</p><div class="doc-barra" id="bar-pugh"></div><div id="ed-pugh"></div></div><div class="pane" id="p-flujo"><h2 class="sec">Diagrama de Flujo de Proceso</h2><p class="sub">Documenta paso a paso cómo se hace un proceso del taller. Marca cada paso
+ como operación, decisión, inspección, transporte o espera.</p><div class="doc-barra" id="bar-flujo"></div><div id="ed-flujo"></div></div><div class="toast" id="toast"></div><script>const sbAn = window.sb;
+const PESOS = n => '$'+Number(n||0).toLocaleString('es-MX',{minimumFractionDigits:2,maximumFractionDigits:2});
+const NUM = n => Number(n||0).toLocaleString('es-MX');
+const C = {azul:'#0073ea',verde:'#00c875',naranja:'#fdab3d',morado:'#a25ddc',
+rojo:'#e2445c',gris:'#718096',gold:'#f5a623'};
+const PALETA = [C.azul,C.verde,C.naranja,C.morado,C.rojo,C.gold,'#0086c0','#037f4c'];
+const PESTANAS = [
+['tablero','📈 Tablero'], ['pareto','📊 Pareto'], ['gantt','📅 Gantt'],
+['costo','💰 Costo-Tiempo'], ['sipoc','🔄 SIPOC'], ['amef','⚠️ AMEF'],
+['causa','🐟 Causa Raíz'], ['pugh','⚖️ Matriz Pugh'], ['flujo','🔀 Flujo']
+];
+let datos = {};
+let graficas = {};
+(async () => {
+const haySesion = await window.MidasAuth.listo;
+if(!haySesion) return;
+window.MidasAuth.montarBarra('header');
+document.getElementById('tabs').innerHTML = PESTANAS.map(([id,t],i)=>
+`<div class="tab${i===0?' on':''}" data-p="${id}" onclick="verPestana('${id}')">${t}</div>`).join('');
+await recargar();
+DOCS.forEach(d => initDoc(d));
+})();
+function verPestana(id){
+document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on', t.dataset.p===id));
+document.querySelectorAll('.pane').forEach(p=>p.classList.remove('on'));
+document.getElementById('p-'+id).classList.add('on');
+setTimeout(()=>Object.values(graficas).forEach(g=>{try{g.resize()}catch(e){}}),60);
+}
+async function recargar(){
+try{
+const vistas = ['an_indicadores','an_pareto_servicio','an_pareto_importe',
+'an_costo_tiempo','an_gantt','an_por_mes','an_tecnicos','an_ordenes'];
+const res = await Promise.all(vistas.map(v => sbAn.from(v).select('*')));
+vistas.forEach((v,i)=>{ datos[v] = res[i].data || []; });
+pintarTablero(); pintarPareto(); pintarGantt(); pintarCosto();
+toast('✓ Datos actualizados');
+}catch(e){ toast('⚠️ '+e.message); }
+}
+function pintarTablero(){
+const k = (datos.an_indicadores||[])[0] || {};
+const tarjetas = [
+['Órdenes totales', NUM(k.ordenes_total), 'histórico', C.azul],
+['Abiertas', NUM(k.abiertas), 'en el taller', C.naranja],
+['Cerradas', NUM(k.cerradas), 'selladas', C.verde],
+['Facturado', PESOS(k.facturado), 'acumulado', C.morado],
+['Por cobrar', PESOS(k.por_cobrar), 'pendiente', C.rojo],
+['Días promedio', (k.dias_promedio||0), 'por reparación', C.gris],
+['Ticket promedio', PESOS(k.ticket_promedio), 'por orden', C.gold],
+['Con retraso', NUM(k.con_retraso), 'pasaron la fecha', C.rojo],
+];
+document.getElementById('kpis').innerHTML = tarjetas.map(([t,n,s,c])=>
+`<div class="kpi" style="border-top-color:${c}"><h4>${t}</h4><div class="n" style="color:${c}">${n}</div><div class="s">${s}</div></div>`).join('');
+const ETIQ={inspeccion_1:'Inspección 1',inspeccion_2:'Inspección 2',presupuesto:'Presupuesto',
+refacciones:'Refacciones',en_proceso:'En Proceso',prefacturado:'Prefacturado',
+facturado:'Facturado',entregado:'Entregado',cancelado:'Cancelado'};
+const COLE={inspeccion_1:'#8e44ad',inspeccion_2:'#a25ddc',presupuesto:'#0086c0',
+refacciones:'#fdab3d',en_proceso:'#e67e22',prefacturado:'#00c875',
+facturado:'#037f4c',entregado:'#0a6b45',cancelado:C.rojo};
+const cuenta={};
+(datos.an_ordenes||[]).forEach(o=>{cuenta[o.estado]=(cuenta[o.estado]||0)+1;});
+const est=Object.keys(cuenta);
+grafica('cEstado','doughnut',{
+labels: est.map(e=>ETIQ[e]||e),
+datasets:[{data:est.map(e=>cuenta[e]), backgroundColor:est.map(e=>COLE[e]||C.gris), borderWidth:0}]
+},{plugins:{legend:{position:'right',labels:{boxWidth:12,font:{size:11}}}}});
+const m = datos.an_por_mes||[];
+grafica('cMes','bar',{
+labels: m.map(x=>x.mes),
+datasets:[
+{label:'Órdenes', data:m.map(x=>x.ordenes), backgroundColor:C.azul, yAxisID:'y', order:2},
+{label:'Facturado', data:m.map(x=>x.facturado), type:'line', borderColor:C.verde,
+backgroundColor:'transparent', yAxisID:'y1', tension:.3, borderWidth:2.5, order:1}
+]
+},{scales:{
+y:{beginAtZero:true,title:{display:true,text:'Órdenes',font:{size:10}}},
+y1:{position:'right',beginAtZero:true,grid:{drawOnChartArea:false},
+title:{display:true,text:'Pesos',font:{size:10}}}}});
+const t = datos.an_tecnicos||[];
+document.getElementById('tTecnicos').innerHTML = t.length ? `<table><thead><tr><th>Técnico</th><th class="num">Órdenes</th><th class="num">Cerradas</th><th class="num">Días prom.</th><th class="num">Con retraso</th><th class="num">Facturado</th></tr></thead><tbody>${t.map(x=>`<tr><td class="b">${esc(x.tecnico)}</td><td class="num">${NUM(x.ordenes)}</td><td class="num">${NUM(x.cerradas)}</td><td class="num">${x.dias_promedio||0}</td><td class="num" style="color:${x.con_retraso>0?C.rojo:C.verde}">${NUM(x.con_retraso)}</td><td class="num b">${PESOS(x.facturado)}</td></tr>`).join('')}</tbody></table>`
+: '<div class="vacio">Sin datos de técnicos todavía</div>';
+}
+function paretoGrafica(canvas, filas, campo, etiqueta){
+grafica(canvas,'bar',{
+labels: filas.map(f=>f.servicio),
+datasets:[
+{label:etiqueta, data:filas.map(f=>f[campo]), backgroundColor:C.azul, order:2},
+{label:'% acumulado', data:filas.map(f=>f.acumulado), type:'line', borderColor:C.rojo,
+backgroundColor:'transparent', yAxisID:'y1', tension:.15, borderWidth:2.5,
+pointBackgroundColor:C.rojo, order:1}
+]
+},{scales:{
+y:{beginAtZero:true},
+y1:{position:'right',beginAtZero:true,max:100,grid:{drawOnChartArea:false},
+ticks:{callback:v=>v+'%'}}}});
+}
+function pintarPareto(){
+const casos = datos.an_pareto_servicio||[];
+const imp = datos.an_pareto_importe||[];
+paretoGrafica('cParetoCasos', casos, 'casos', 'Casos');
+paretoGrafica('cParetoImporte', imp, 'importe', 'Importe');
+document.getElementById('tPareto').innerHTML = casos.length ? `<table><thead><tr><th>Servicio</th><th class="num">Casos</th><th class="num">%</th><th class="num">Acumulado</th><th class="num">Importe</th></tr></thead><tbody>${casos.map(f=>`<tr${f.acumulado<=80?' style="background:#fffbf0"':''}><td class="b">${esc(f.servicio)}</td><td class="num">${NUM(f.casos)}</td><td class="num">${f.porcentaje}%</td><td class="num b">${f.acumulado}%</td><td class="num">${PESOS(f.importe)}</td></tr>`).join('')}</tbody></table><p style="font-size:11px;color:var(--gray);margin-top:9px">
+Las filas resaltadas son el 80% acumulado: ahí concentra tu taller la mayor parte del trabajo.</p>`
+: '<div class="vacio">Sin datos</div>';
+}
+function pintarGantt(){
+const filas = (datos.an_gantt||[]).filter(o=>o.fecha_entrada);
+const cont = document.getElementById('gantt');
+if(!filas.length){ cont.innerHTML='<div class="vacio"><span class="ic">📅</span>Sin órdenes para mostrar</div>'; return; }
+const fechas=[];
+filas.forEach(o=>{
+fechas.push(new Date(o.fecha_entrada));
+if(o.fecha_entrega_estimada) fechas.push(new Date(o.fecha_entrega_estimada));
+if(o.fecha_fin) fechas.push(new Date(o.fecha_fin));
+});
+fechas.push(new Date());
+let min=new Date(Math.min(...fechas)), max=new Date(Math.max(...fechas));
+min.setDate(min.getDate()-1); max.setDate(max.getDate()+1);
+const span = max-min || 1;
+const pos = d => ((new Date(d)-min)/span*100);
+const COLE={inspeccion_1:'#8e44ad',inspeccion_2:'#a25ddc',presupuesto:'#0086c0',
+refacciones:'#fdab3d',en_proceso:'#e67e22',prefacturado:'#00c875',
+facturado:'#037f4c',entregado:'#0a6b45',cancelado:C.rojo};
+cont.innerHTML = filas.map(o=>{
+const ini=pos(o.fecha_entrada);
+const fin=pos(o.fecha_fin || o.fecha_entrega_estimada || new Date());
+const ancho=Math.max(fin-ini,1.5);
+const col=COLE[o.estado]||C.gris;
+const tarde=o.dias_retraso>0;
+return `<div class="gantt-fila"><div class="gantt-et"><b>${o.cerrada?'🔒 ':''}#${esc(o.numero_orden)} · ${esc(o.cliente||'')}</b><span>${esc(o.marca||'')} ${esc(o.modelo||'')} · ${esc(o.tecnico)}</span></div><div class="gantt-pista"><div class="gantt-barra" style="left:${ini}%;width:${ancho}%;background:${col};
+${tarde?'box-shadow:0 0 0 2px '+C.rojo:''}">
+${o.dias} d${tarde?' ⚠':''}
+</div><div class="gantt-hoy" style="left:${pos(new Date())}%" title="Hoy"></div></div></div>`;
+}).join('') + `<div class="gantt-esc"><span>${min.toLocaleDateString('es-MX')}</span><span style="color:${C.rojo};font-weight:700">▌hoy</span><span>${max.toLocaleDateString('es-MX')}</span></div>`;
+}
+function pintarCosto(){
+const f = datos.an_costo_tiempo||[];
+grafica('cDispersion','scatter',{
+datasets: f.map((x,i)=>({
+label:x.servicio,
+data:[{x:Number(x.dias_promedio)||0, y:Number(x.costo_promedio)||0}],
+backgroundColor:PALETA[i%PALETA.length], pointRadius:9, pointHoverRadius:12
+}))
+},{scales:{
+x:{title:{display:true,text:'Días promedio',font:{size:11}},beginAtZero:true},
+y:{title:{display:true,text:'Costo promedio',font:{size:11}},beginAtZero:true}},
+plugins:{legend:{position:'bottom',labels:{boxWidth:11,font:{size:10}}}}});
+grafica('cRendimiento','bar',{
+labels:f.map(x=>x.servicio),
+datasets:[{label:'Pesos por día', data:f.map(x=>x.pesos_por_dia),
+backgroundColor:f.map((_,i)=>PALETA[i%PALETA.length])}]
+},{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}});
+document.getElementById('tCosto').innerHTML = f.length ? `<table><thead><tr><th>Servicio</th><th class="num">Casos</th><th class="num">Días prom.</th><th class="num">Mano obra</th><th class="num">Refacciones</th><th class="num">Costo prom.</th><th class="num">$/día</th><th class="num">Total</th></tr></thead><tbody>${f.map(x=>`<tr><td class="b">${esc(x.servicio)}</td><td class="num">${NUM(x.casos)}</td><td class="num">${x.dias_promedio||0}</td><td class="num">${PESOS(x.mano_obra_prom)}</td><td class="num">${PESOS(x.refacciones_prom)}</td><td class="num">${PESOS(x.costo_promedio)}</td><td class="num b" style="color:${C.verde}">${PESOS(x.pesos_por_dia)}</td><td class="num b">${PESOS(x.importe_total)}</td></tr>`).join('')}</tbody></table>`
+: '<div class="vacio">Sin datos</div>';
+}
+function grafica(id, tipo, data, extra){
+const el=document.getElementById(id); if(!el) return;
+if(graficas[id]) graficas[id].destroy();
+graficas[id]=new Chart(el,{type:tipo,data,options:Object.assign({
+responsive:true,maintainAspectRatio:false,
+plugins:{legend:{labels:{font:{size:11}}}}
+},extra||{})});
+}
+function esc(s){ return s==null?'':String(s)
+.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function toast(m){
+const t=document.getElementById('toast');
+t.textContent=m; t.classList.add('show');
+setTimeout(()=>t.classList.remove('show'),2400);
+}
+/* ═══════════════════════════════════════════════════════════
+HERRAMIENTAS DOCUMENTALES
+Las cuatro (SIPOC, AMEF, Causa Raíz, Pugh) y el flujo comparten
+el mismo motor: se listan, se crean, se editan y se guardan en
+Supabase. Solo cambia cómo se dibuja y se lee cada una.
+═══════════════════════════════════════════════════════════ */
+const DOCS = [
+{tipo:'sipoc', pane:'sipoc', nombre:'mapa SIPOC', nuevo:()=>({proveedores:'',entradas:'',proceso:'',salidas:'',clientes:''})},
+{tipo:'amef', pane:'amef', nombre:'AMEF', nuevo:()=>({filas:[filaAmef()]})},
+{tipo:'causa_raiz', pane:'causa', nombre:'análisis de causa', nuevo:()=>({problema:'',categorias:catsIshikawa(),porques:['','','','','']})},
+{tipo:'pugh', pane:'pugh', nombre:'matriz de Pugh', nuevo:()=>({referencia:'Opción actual',opciones:['Opción A','Opción B'],criterios:[filaPugh()]})},
+{tipo:'flujo', pane:'flujo', nombre:'diagrama de flujo', nuevo:()=>({pasos:[filaFlujo()]})},
+];
+const filaAmef = ()=>({paso:'',falla:'',efecto:'',sev:5,causa:'',ocu:5,control:'',det:5,accion:'',responsable:''});
+const filaPugh = ()=>({criterio:'',peso:3,valores:{}});
+const filaFlujo = ()=>({tipo:'operacion',texto:'',responsable:'',tiempo:''});
+const catsIshikawa = ()=>([
+{nombre:'Mano de obra', color:'#0073ea', causas:['']},
+{nombre:'Método', color:'#00c875', causas:['']},
+{nombre:'Máquina', color:'#fdab3d', causas:['']},
+{nombre:'Material', color:'#a25ddc', causas:['']},
+{nombre:'Medición', color:'#e2445c', causas:['']},
+{nombre:'Medio ambiente',color:'#0086c0',causas:['']},
+]);
+const estado = {}; // tipo -> {lista, actual}
+async function initDoc(d){
+estado[d.tipo] = {lista:[], actual:null};
+document.getElementById('bar-'+d.pane).innerHTML = `
+<select id="sel-${d.tipo}" onchange="abrirDoc('${d.tipo}',this.value)"></select><button class="btn b-nuevo" onclick="nuevoDoc('${d.tipo}')">+ Nuevo</button><button class="btn b-guardar" onclick="guardarDoc('${d.tipo}')">💾 Guardar</button><button class="btn b-borrar" onclick="borrarDoc('${d.tipo}')">Eliminar</button><span id="info-${d.tipo}" style="font-size:11px;color:var(--gray);margin-left:auto"></span>`;
+await listarDocs(d.tipo);
+}
+async function listarDocs(tipo){
+const {data} = await sbAn.from('analisis_documentos')
+.select('*').eq('tipo',tipo).order('updated_at',{ascending:false});
+estado[tipo].lista = data||[];
+const sel=document.getElementById('sel-'+tipo);
+sel.innerHTML = (data||[]).length
+? data.map(x=>`<option value="${x.id}">${esc(x.titulo)}</option>`).join('')
+: '<option value="">— Sin documentos —</option>';
+if(data && data.length){ sel.value=data[0].id; abrirDoc(tipo,data[0].id); }
+else { estado[tipo].actual=null; dibujarDoc(tipo); }
+}
+function abrirDoc(tipo,id){
+estado[tipo].actual = estado[tipo].lista.find(x=>x.id===id) || null;
+dibujarDoc(tipo);
+}
+async function nuevoDoc(tipo){
+const d = DOCS.find(x=>x.tipo===tipo);
+const titulo = prompt(`Nombre del nuevo ${d.nombre}:`, 'Proceso de '+new Date().toLocaleDateString('es-MX'));
+if(!titulo) return;
+const {data,error} = await sbAn.from('analisis_documentos').insert({
+tipo, titulo, contenido:d.nuevo(), creado_por:window.MidasAuth.usuario.nombre
+}).select().single();
+if(error){ toast('⚠️ '+error.message); return; }
+await listarDocs(tipo);
+document.getElementById('sel-'+tipo).value = data.id;
+abrirDoc(tipo, data.id);
+toast('✓ Creado');
+}
+async function guardarDoc(tipo){
+const a = estado[tipo].actual;
+if(!a){ toast('Primero crea un documento'); return; }
+leerDoc(tipo); // pasa lo escrito en pantalla al objeto
+const {error} = await sbAn.from('analisis_documentos')
+.update({contenido:a.contenido, titulo:a.titulo}).eq('id',a.id);
+if(error){ toast('⚠️ '+error.message); return; }
+toast('✓ Guardado');
+await listarDocs(tipo);
+document.getElementById('sel-'+tipo).value = a.id;
+abrirDoc(tipo, a.id);
+}
+async function borrarDoc(tipo){
+const a = estado[tipo].actual;
+if(!a) return;
+if(!confirm(`¿Eliminar "${a.titulo}"? No se puede deshacer.`)) return;
+await sbAn.from('analisis_documentos').delete().eq('id',a.id);
+await listarDocs(tipo);
+toast('Eliminado');
+}
+function infoDoc(tipo){
+const a=estado[tipo].actual;
+document.getElementById('info-'+tipo).textContent = a
+? `Editado por ${a.editado_por||a.creado_por||'—'} · ${new Date(a.updated_at).toLocaleString('es-MX',{dateStyle:'short',timeStyle:'short'})}`
+: '';
+}
+/* ── Dibuja el editor según el tipo ── */
+function dibujarDoc(tipo){
+const cont=document.getElementById('ed-'+DOCS.find(d=>d.tipo===tipo).pane);
+const a=estado[tipo].actual;
+infoDoc(tipo);
+if(!a){
+cont.innerHTML=`<div class="vacio"><span class="ic">📄</span>
+No hay documentos todavía.<br>Presiona <b>+ Nuevo</b> para crear el primero.</div>`;
+return;
+}
+({sipoc:dibSipoc, amef:dibAmef, causa_raiz:dibCausa, pugh:dibPugh, flujo:dibFlujo})[tipo](cont,a);
+}
+/* ── Lee lo escrito en pantalla ── */
+function leerDoc(tipo){
+({sipoc:leerSipoc, amef:leerAmef, causa_raiz:leerCausa, pugh:leerPugh, flujo:leerFlujo})[tipo]();
+}
+function val(id){ const e=document.getElementById(id); return e?e.value:''; }
+/* ══════════════ AMEF ══════════════ */
+function dibAmef(cont,a){
+const filas=a.contenido.filas||[];
+cont.innerHTML=`
+<div class="card"><input class="ed" id="amef-titulo" value="${esc(a.titulo)}" style="font-weight:800;font-size:14px;margin-bottom:12px"/><div class="tabla-ed"><table><thead><tr><th style="min-width:130px">Paso del proceso</th><th style="min-width:130px">Modo de falla</th><th style="min-width:130px">Efecto</th><th title="Qué tan grave: 1 sin efecto, 10 peligroso">SEV</th><th style="min-width:130px">Causa</th><th title="Qué tan seguido ocurre: 1 casi nunca, 10 muy frecuente">OCU</th><th style="min-width:120px">Control actual</th><th title="Qué tan fácil se detecta: 1 seguro se detecta, 10 no se detecta">DET</th><th title="Severidad × Ocurrencia × Detección">NPR</th><th style="min-width:140px">Acción recomendada</th><th style="min-width:100px">Responsable</th><th></th></tr></thead><tbody id="amef-body">
+${filas.map((f,i)=>filaAmefHtml(f,i)).join('')}
+</tbody></table></div><button class="add" onclick="amefAgregar()">+ Agregar modo de falla</button><div style="margin-top:13px;font-size:11.5px;color:var(--gray);line-height:1.7"><b>Cómo leer el NPR:</b><span class="npr npr-b" style="padding:2px 8px">1–49 aceptable</span><span class="npr npr-m" style="padding:2px 8px">50–99 vigilar</span><span class="npr npr-a" style="padding:2px 8px">100+ acción inmediata</span></div></div>`;
+cont.querySelectorAll('.amef-n').forEach(el=>el.addEventListener('input',recalcAmef));
+recalcAmef();
+}
+function filaAmefHtml(f,i){
+return `<tr data-i="${i}"><td><textarea class="ed" data-k="paso">${esc(f.paso)}</textarea></td><td><textarea class="ed" data-k="falla">${esc(f.falla)}</textarea></td><td><textarea class="ed" data-k="efecto">${esc(f.efecto)}</textarea></td><td><input class="ed mini amef-n" data-k="sev" type="number" min="1" max="10" value="${f.sev||5}"/></td><td><textarea class="ed" data-k="causa">${esc(f.causa)}</textarea></td><td><input class="ed mini amef-n" data-k="ocu" type="number" min="1" max="10" value="${f.ocu||5}"/></td><td><textarea class="ed" data-k="control">${esc(f.control)}</textarea></td><td><input class="ed mini amef-n" data-k="det" type="number" min="1" max="10" value="${f.det||5}"/></td><td><div class="npr" data-npr>—</div></td><td><textarea class="ed" data-k="accion">${esc(f.accion)}</textarea></td><td><input class="ed" data-k="responsable" value="${esc(f.responsable)}"/></td><td><button class="fila-btn" onclick="amefQuitar(${i})" title="Quitar">✕</button></td></tr>`;
+}
+function recalcAmef(){
+document.querySelectorAll('#amef-body tr').forEach(tr=>{
+const g=k=>Number(tr.querySelector(`[data-k="${k}"]`).value)||0;
+const npr=g('sev')*g('ocu')*g('det');
+const c=tr.querySelector('[data-npr]');
+c.textContent=npr;
+c.className='npr '+(npr>=100?'npr-a':npr>=50?'npr-m':'npr-b');
+});
+}
+function leerAmef(){
+const a=estado.amef.actual;
+a.titulo=val('amef-titulo')||a.titulo;
+a.contenido.filas=[...document.querySelectorAll('#amef-body tr')].map(tr=>{
+const o={};
+tr.querySelectorAll('[data-k]').forEach(el=>{
+o[el.dataset.k]= el.type==='number' ? Number(el.value)||0 : el.value;
+});
+return o;
+});
+}
+function amefAgregar(){ leerAmef(); estado.amef.actual.contenido.filas.push(filaAmef()); dibujarDoc('amef'); }
+function amefQuitar(i){ leerAmef(); estado.amef.actual.contenido.filas.splice(i,1); dibujarDoc('amef'); }
+/* ══════════════ CAUSA RAÍZ ══════════════ */
+function dibCausa(cont,a){
+const c=a.contenido;
+cont.innerHTML=`
+<div class="card"><input class="ed" id="causa-titulo" value="${esc(a.titulo)}" style="font-weight:800;font-size:14px;margin-bottom:12px"/><label style="font-size:11px;font-weight:800;color:var(--gray);text-transform:uppercase">Problema a analizar</label><textarea class="ed" id="causa-problema" style="min-height:52px;margin-top:5px"
+placeholder="Ej. El vehículo se entregó 3 días tarde">${esc(c.problema)}</textarea></div><div class="card"><h3>🐟 Diagrama de Ishikawa — las 6M</h3><div class="cap">Ordena las causas posibles por categoría. No busques culpables, busca causas.</div><div class="ishi-cats" id="ishi">
+${(c.categorias||[]).map((cat,ci)=>`
+<div class="ishi-cat"><h5 style="background:${cat.color}">${esc(cat.nombre)}</h5><div class="cuerpo" data-cat="${ci}">
+${(cat.causas||[]).map((x,xi)=>`
+<div class="ishi-causa"><input class="ed" data-causa="${ci}-${xi}" value="${esc(x)}" placeholder="Causa posible…"/><button class="fila-btn" onclick="causaQuitar(${ci},${xi})">✕</button></div>`).join('')}
+<button class="add" style="padding:5px;font-size:11px" onclick="causaAgregar(${ci})">+ causa</button></div></div>`).join('')}
+</div></div><div class="card"><h3>Los 5 Porqués</h3><div class="cap">Pregunta "¿por qué?" cinco veces seguidas. La quinta respuesta suele ser
+la causa real, no el síntoma.</div>
+${(c.porques||['','','','','']).map((p,i)=>`
+<div class="porque"><div class="n">${i+1}</div><input class="ed" data-porque="${i}" value="${esc(p)}"
+placeholder="${i===0?'¿Por qué ocurrió el problema?':'¿Y por qué pasó eso?'}"/></div>`).join('')}
+<div style="background:#fff8e1;border-left:4px solid var(--gold);padding:11px 14px;
+border-radius:8px;margin-top:11px;font-size:12px;line-height:1.6;color:#7a5c00"><b>Causa raíz identificada:</b> la respuesta del quinto porqué. Sobre esa hay que actuar
+— atacar las anteriores solo apaga el síntoma.
+</div></div>`;
+}
+function leerCausa(){
+const a=estado.causa_raiz.actual, c=a.contenido;
+a.titulo=val('causa-titulo')||a.titulo;
+c.problema=val('causa-problema');
+(c.categorias||[]).forEach((cat,ci)=>{
+cat.causas=(cat.causas||[]).map((_,xi)=>{
+const el=document.querySelector(`[data-causa="${ci}-${xi}"]`);
+return el?el.value:'';
+});
+});
+c.porques=[0,1,2,3,4].map(i=>{
+const el=document.querySelector(`[data-porque="${i}"]`);
+return el?el.value:'';
+});
+}
+function causaAgregar(ci){ leerCausa(); estado.causa_raiz.actual.contenido.categorias[ci].causas.push(''); dibujarDoc('causa_raiz'); }
+function causaQuitar(ci,xi){ leerCausa(); estado.causa_raiz.actual.contenido.categorias[ci].causas.splice(xi,1); dibujarDoc('causa_raiz'); }
+/* ══════════════ SIPOC ══════════════ */
+const COLS_SIPOC=[
+['proveedores','Proveedores','Supplier — quién entrega los insumos','#0073ea'],
+['entradas', 'Entradas', 'Input — qué se recibe','#00c875'],
+['proceso', 'Proceso', 'Process — qué se hace, paso a paso','#fdab3d'],
+['salidas', 'Salidas', 'Output — qué se produce','#a25ddc'],
+['clientes', 'Clientes', 'Customer — quién lo recibe','#e2445c'],
+];
+function dibSipoc(cont,a){
+const c=a.contenido;
+cont.innerHTML=`
+<div class="card"><input class="ed" id="sipoc-titulo" value="${esc(a.titulo)}" style="font-weight:800;font-size:14px"/></div><div class="sipoc">
+${COLS_SIPOC.map(([k,t,d,col])=>`
+<div class="sipoc-col"><div class="sipoc-cab" style="background:${col}">${t}<span>${d}</span></div><div class="sipoc-cuerpo"><textarea class="ed" id="sipoc-${k}" placeholder="Uno por línea…">${esc(c[k]||'')}</textarea></div></div>`).join('')}
+</div><div class="card" style="margin-top:16px;font-size:12px;color:var(--gray);line-height:1.7"><b>Cómo llenarlo:</b> empieza por el <b>Proceso</b> (4 a 7 pasos, no más).
+Luego define qué <b>Salidas</b> produce y quién es el <b>Cliente</b> de cada una.
+Al final identifica las <b>Entradas</b> que necesitas y quién te las <b>Provee</b>.
+Escribe un elemento por renglón.
+</div>`;
+}
+function leerSipoc(){
+const a=estado.sipoc.actual;
+a.titulo=val('sipoc-titulo')||a.titulo;
+COLS_SIPOC.forEach(([k])=>{ a.contenido[k]=val('sipoc-'+k); });
+}
+/* ══════════════ MATRIZ DE PUGH ══════════════ */
+function dibPugh(cont,a){
+const c=a.contenido;
+const ops=c.opciones||[];
+cont.innerHTML=`
+<div class="card"><input class="ed" id="pugh-titulo" value="${esc(a.titulo)}" style="font-weight:800;font-size:14px;margin-bottom:11px"/><div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap"><label style="font-size:11.5px;font-weight:700;color:var(--gray)">Referencia (línea base):</label><input class="ed" id="pugh-ref" value="${esc(c.referencia||'')}" style="max-width:230px"/><button class="btn b-nuevo" onclick="pughNuevaOpcion()">+ Agregar opción</button></div></div><div class="card"><div class="tabla-ed"><table><thead><tr><th style="min-width:190px">Criterio</th><th title="Qué tan importante es este criterio (1 a 5)">Peso</th>
+${ops.map((o,i)=>`<th style="min-width:110px"><input class="ed" data-op="${i}" value="${esc(o)}" style="font-size:11px"/><button class="fila-btn" onclick="pughQuitarOpcion(${i})">✕</button></th>`).join('')}
+</tr></thead><tbody id="pugh-body">
+${(c.criterios||[]).map((cr,i)=>`
+<tr data-i="${i}"><td><input class="ed" data-k="criterio" value="${esc(cr.criterio)}" placeholder="Ej. Costo, durabilidad…"/></td><td><input class="ed mini pugh-n" data-k="peso" type="number" min="1" max="5" value="${cr.peso||3}"/></td>
+${ops.map((_,oi)=>`<td><select class="ed pugh-n" data-v="${oi}"><option value="1"${(cr.valores||{})[oi]==1?' selected':''}>+1 mejor</option><option value="0"${((cr.valores||{})[oi]==0||(cr.valores||{})[oi]==null)?' selected':''}>0 igual</option><option value="-1"${(cr.valores||{})[oi]==-1?' selected':''}>−1 peor</option></select></td>`).join('')}
+<td><button class="fila-btn" onclick="pughQuitar(${i})">✕</button></td></tr>`).join('')}
+</tbody><tfoot id="pugh-foot"></tfoot></table></div><button class="add" onclick="pughAgregar()">+ Agregar criterio</button><div id="pugh-ganador" style="margin-top:13px"></div></div>`;
+cont.querySelectorAll('.pugh-n').forEach(el=>el.addEventListener('input',recalcPugh));
+cont.querySelectorAll('.pugh-n').forEach(el=>el.addEventListener('change',recalcPugh));
+recalcPugh();
+}
+function recalcPugh(){
+const a=estado.pugh.actual; if(!a) return;
+const ops=a.contenido.opciones||[];
+const totales=ops.map(()=>0);
+document.querySelectorAll('#pugh-body tr').forEach(tr=>{
+const peso=Number(tr.querySelector('[data-k="peso"]').value)||0;
+tr.querySelectorAll('[data-v]').forEach(sel=>{
+totales[Number(sel.dataset.v)] += peso*(Number(sel.value)||0);
+});
+});
+const max=Math.max(...totales);
+document.getElementById('pugh-foot').innerHTML=`<tr style="background:#f5f6f8"><td class="b">Puntuación ponderada</td><td></td>
+${totales.map(t=>`<td class="num b" style="color:${t===max&&t>0?'#00c875':t<0?'#e2445c':'#718096'};font-size:14px">
+${t>0?'+':''}${t}</td>`).join('')}<td></td></tr>`;
+const g=document.getElementById('pugh-ganador');
+if(max>0){
+const gi=totales.indexOf(max);
+g.innerHTML=`<div style="background:#e6fff5;border-left:4px solid #00c875;padding:12px 15px;
+border-radius:8px;font-size:13px;line-height:1.6"><b>Mejor opción: ${esc(ops[gi]||'')}</b> con ${max} puntos, superior a la referencia
+"<i>${esc(a.contenido.referencia||'')}</i>".</div>`;
+} else {
+g.innerHTML=`<div style="background:#fff8e1;border-left:4px solid #f5a623;padding:12px 15px;
+border-radius:8px;font-size:13px;line-height:1.6">
+Ninguna opción supera a la referencia. Conviene quedarse con lo actual o buscar alternativas nuevas.</div>`;
+}
+}
+function leerPugh(){
+const a=estado.pugh.actual;
+a.titulo=val('pugh-titulo')||a.titulo;
+a.contenido.referencia=val('pugh-ref');
+a.contenido.opciones=[...document.querySelectorAll('[data-op]')].map(e=>e.value);
+a.contenido.criterios=[...document.querySelectorAll('#pugh-body tr')].map(tr=>{
+const valores={};
+tr.querySelectorAll('[data-v]').forEach(s=>{ valores[s.dataset.v]=Number(s.value)||0; });
+return {
+criterio: tr.querySelector('[data-k="criterio"]').value,
+peso: Number(tr.querySelector('[data-k="peso"]').value)||3,
+valores
+};
+});
+}
+function pughAgregar(){ leerPugh(); estado.pugh.actual.contenido.criterios.push(filaPugh()); dibujarDoc('pugh'); }
+function pughQuitar(i){ leerPugh(); estado.pugh.actual.contenido.criterios.splice(i,1); dibujarDoc('pugh'); }
+function pughNuevaOpcion(){
+leerPugh();
+const c=estado.pugh.actual.contenido;
+c.opciones.push('Opción '+String.fromCharCode(65+c.opciones.length));
+dibujarDoc('pugh');
+}
+function pughQuitarOpcion(i){
+leerPugh();
+const c=estado.pugh.actual.contenido;
+c.opciones.splice(i,1);
+c.criterios.forEach(cr=>{
+const nv={}; let k=0;
+Object.keys(cr.valores||{}).forEach(idx=>{ if(Number(idx)!==i) nv[k++]=cr.valores[idx]; });
+cr.valores=nv;
+});
+dibujarDoc('pugh');
+}
+/* ══════════════ DIAGRAMA DE FLUJO ══════════════ */
+const TIPOS_FLUJO={
+operacion: ['Operación','#0073ea','▭'],
+decision: ['Decisión','#fdab3d','◇'],
+inspeccion: ['Inspección','#a25ddc','◯'],
+transporte: ['Transporte','#00c875','⇨'],
+espera: ['Espera','#e2445c','▽'],
+};
+function dibFlujo(cont,a){
+const pasos=a.contenido.pasos||[];
+cont.innerHTML=`
+<div class="card"><input class="ed" id="flujo-titulo" value="${esc(a.titulo)}" style="font-weight:800;font-size:14px"/></div><div class="card"><div id="flujo-body">
+${pasos.map((p,i)=>{
+const [nom,col,sim]=TIPOS_FLUJO[p.tipo]||TIPOS_FLUJO.operacion;
+return `<div data-i="${i}" style="display:flex;gap:9px;align-items:flex-start;
+padding:9px;border:1px solid var(--border);border-radius:9px;margin-bottom:8px;
+border-left:4px solid ${col}"><div style="width:30px;height:30px;border-radius:50%;background:${col};color:#fff;
+display:flex;align-items:center;justify-content:center;font-weight:800;
+font-size:12px;flex-shrink:0">${i+1}</div><div style="flex:1;display:grid;grid-template-columns:130px 1fr 130px 90px;gap:7px"><select class="ed" data-k="tipo" onchange="dibujarDocTrasLeer('flujo')">
+${Object.entries(TIPOS_FLUJO).map(([k,[n,,s]])=>
+`<option value="${k}"${p.tipo===k?' selected':''}>${s} ${n}</option>`).join('')}
+</select><input class="ed" data-k="texto" value="${esc(p.texto)}" placeholder="Qué se hace en este paso…"/><input class="ed" data-k="responsable" value="${esc(p.responsable)}" placeholder="Responsable"/><input class="ed" data-k="tiempo" value="${esc(p.tiempo)}" placeholder="Tiempo"/></div><button class="fila-btn" onclick="flujoQuitar(${i})">✕</button></div>`;
+}).join('')}
+</div><button class="add" onclick="flujoAgregar()">+ Agregar paso</button><div style="margin-top:13px;font-size:11.5px;color:var(--gray);display:flex;gap:13px;flex-wrap:wrap">
+${Object.entries(TIPOS_FLUJO).map(([,[n,c,s]])=>
+`<span><b style="color:${c}">${s}</b> ${n}</span>`).join('')}
+</div></div>`;
+}
+function leerFlujo(){
+const a=estado.flujo.actual;
+a.titulo=val('flujo-titulo')||a.titulo;
+a.contenido.pasos=[...document.querySelectorAll('#flujo-body [data-i]')].map(d=>{
+const o={};
+d.querySelectorAll('[data-k]').forEach(el=>{ o[el.dataset.k]=el.value; });
+return o;
+});
+}
+function flujoAgregar(){ leerFlujo(); estado.flujo.actual.contenido.pasos.push(filaFlujo()); dibujarDoc('flujo'); }
+function flujoQuitar(i){ leerFlujo(); estado.flujo.actual.contenido.pasos.splice(i,1); dibujarDoc('flujo'); }
+function dibujarDocTrasLeer(tipo){ leerDoc(tipo); dibujarDoc(tipo); }</script></template><template id="tpl-evidencias" data-pub="0"><style>:root{--primary:#1a1a2e;--accent:#e94560;--bg:#f0f4f8;--border:#e1e4e8;--text:#2c3e50;--gray:#718096;--light:#c5c7d4}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);font-size:14px}header{background:var(--primary);color:#fff;padding:13px 22px;display:flex;align-items:center;gap:13px;flex-wrap:wrap;position:sticky;top:0;z-index:60;box-shadow:0 2px 8px rgba(0,0,0,.25)}header h1{font-size:16px;font-weight:800;flex:1;min-width:170px}header .badge{font-size:10.5px;background:rgba(255,255,255,.14);padding:3px 11px;border-radius:20px}.barra{background:#fff;border-bottom:1px solid var(--border);padding:13px 22px;position:sticky;top:50px;z-index:50}.buscador{position:relative;max-width:620px;margin:0 auto}.buscador input{width:100%;padding:13px 15px 13px 44px;border:2px solid var(--border);border-radius:10px;font-size:15px;font-family:inherit;transition:.15s}.buscador input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px rgba(233,69,96,.09)}.buscador .ic{position:absolute;left:15px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--gray)}.buscador .limpiar{position:absolute;right:11px;top:50%;transform:translateY(-50%);background:#f0f4f8;border:none;width:26px;height:26px;border-radius:50%;cursor:pointer;color:var(--gray);font-size:14px;display:none}.buscador .limpiar.ver{display:block}.pistas{max-width:620px;margin:9px auto 0;font-size:11.5px;color:var(--light);text-align:center}.pistas b{color:var(--gray)}.cont{max-width:1120px;margin:0 auto;padding:20px 22px 50px}.resumen{font-size:12.5px;color:var(--gray);margin-bottom:16px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}.resumen b{color:var(--text)}.orden{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:16px;overflow:hidden;box-shadow:0 1px 5px rgba(0,0,0,.05)}.orden-cab{padding:13px 17px;border-bottom:1px solid #f0f1f5;display:flex;align-items:center;gap:11px;flex-wrap:wrap;background:#fafbfc}.orden-num{font-weight:800;color:var(--primary);font-size:14px}.orden-cliente{font-weight:700;font-size:13.5px}.orden-veh{font-size:12px;color:var(--gray)}.placa{font-family:monospace;background:#eef2f7;border-radius:4px;padding:2px 7px;font-size:11px;font-weight:700;color:var(--primary)}.orden-fecha{margin-left:auto;font-size:11px;color:var(--light);white-space:nowrap}.chip-estado{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;padding:3px 9px;border-radius:20px;color:#fff}.fotos{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:11px;padding:15px 17px}.foto{border:1px solid var(--border);border-radius:9px;overflow:hidden;background:#fff}.foto img{width:100%;height:118px;object-fit:cover;display:block;cursor:zoom-in;background:#eef2f7}.foto .doc{height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:#f7f9fc;text-decoration:none;color:var(--gray)}.foto .doc .ic{font-size:27px}.foto .doc .ab{font-size:9px;font-weight:800;color:#0073ea;text-transform:uppercase}.foto .info{padding:7px 9px}.foto .zn{font-size:9.5px;font-weight:800;text-transform:uppercase;letter-spacing:.3px;color:#0073ea;display:block;margin-bottom:2px}.foto .ds{font-size:11px;line-height:1.35;word-break:break-word}.foto .fc{font-size:9.5px;color:var(--light);margin-top:3px}.vacio{text-align:center;padding:60px 22px;color:var(--light)}.vacio .ic{font-size:44px;display:block;margin-bottom:13px}.vacio h3{font-size:16px;color:var(--gray);margin-bottom:7px;font-weight:700}.vacio p{font-size:12.5px;line-height:1.65}.cargando{display:flex;align-items:center;justify-content:center;padding:60px;gap:12px;color:var(--gray);font-size:13px}.spin{width:22px;height:22px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:g .7s linear infinite}@keyframes g{to{transform:rotate(360deg)}}.visor{position:fixed;inset:0;background:rgba(0,0,0,.93);z-index:3000;display:none;align-items:center;justify-content:center;flex-direction:column;gap:15px;padding:26px}.visor.abierto{display:flex}.visor img{max-width:100%;max-height:74vh;border-radius:8px}.visor .datos{color:#fff;text-align:center;font-size:13px;line-height:1.6;max-width:600px}.visor .datos b{color:#f5a623}.visor .datos .sub{color:#9aa3b5;font-size:11.5px}.visor .cerrar{position:absolute;top:17px;right:21px;background:rgba(255,255,255,.15);color:#fff;border:none;width:38px;height:38px;border-radius:50%;font-size:19px;cursor:pointer}.visor .bajar{background:#0073ea;color:#fff;border:none;border-radius:8px;padding:9px 22px;font-size:12.5px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}</style><header><span style="font-size:19px">📷</span><h1>Evidencias Fotográficas</h1><span class="badge" id="hEstado">Cargando…</span></header><div class="barra"><div class="buscador"><span class="ic">🔍</span><input type="text" id="q" placeholder="Buscar por cliente, placas, marca…" autocomplete="off"/><button class="limpiar" id="btnLimpiar" title="Limpiar">✕</button></div><div class="pistas">
  Escribe el <b>nombre del cliente</b>, las <b>placas</b>, la <b>marca</b> o el <b>número de orden</b></div></div><div class="cont"><div class="resumen" id="resumen"></div><div id="lista"><div class="cargando"><div class="spin"></div> Cargando evidencias…</div></div></div><div class="visor" id="visor"><button class="cerrar" onclick="cerrarVisor()">✕</button><img id="visorImg" alt="Evidencia"/><div class="datos" id="visorDatos"></div><a class="bajar" id="visorBajar" download target="_blank">⬇️ Descargar foto</a></div><script>const sbEv = window.sb; 
 const ESTADOS_COLOR = {
 recibido:'#a25ddc', diagnostico:'#0086c0', en_proceso:'#fdab3d',
@@ -2060,7 +2844,7 @@ rol: perfil?.rol || 'usuario'
 return true;
 })();
 })();</script>
-<script type="text/plain" id="libs-src">["https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js", "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"]</script>
+<script type="text/plain" id="libs-src">["https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js", "https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js", "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"]</script>
 <script>new Function(document.getElementById("auth-src").textContent)();</script>
 <script>var montado = {};
 var actual = 'inicio';
